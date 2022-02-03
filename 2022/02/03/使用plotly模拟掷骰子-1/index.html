@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | JiaFeng的博客</title>
+  <title>使用plotly模拟掷骰子 | JiaFeng的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JiaFeng的博客">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="使用plotly模拟掷骰子 [TOC] 1、安装plotly模块1$ python -m pip install --user plotly 这里的修改源的操作不再赘述，详情查看“matplotlib的使用”那部分笔记的内容； 2、创建Die类：为模拟掷一个骰子的情况，我们创建下面的类：die.py 123456789101112from random import randintclass Di">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用plotly模拟掷骰子">
+<meta property="og:url" content="http://example.com/2022/02/03/%E4%BD%BF%E7%94%A8plotly%E6%A8%A1%E6%8B%9F%E6%8E%B7%E9%AA%B0%E5%AD%90-1/index.html">
 <meta property="og:site_name" content="JiaFeng的博客">
+<meta property="og:description" content="使用plotly模拟掷骰子 [TOC] 1、安装plotly模块1$ python -m pip install --user plotly 这里的修改源的操作不再赘述，详情查看“matplotlib的使用”那部分笔记的内容； 2、创建Die类：为模拟掷一个骰子的情况，我们创建下面的类：die.py 123456789101112from random import randintclass Di">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/images/python/数据可视化/使用plotly模拟掷骰子/newplot1.png">
+<meta property="og:image" content="http://example.com/images/python/数据可视化/使用plotly模拟掷骰子/newplot.png">
+<meta property="og:image" content="http://example.com/images/python/数据可视化/使用plotly模拟掷骰子/yxr.png">
+<meta property="article:published_time" content="2022-02-03T06:57:32.000Z">
+<meta property="article:modified_time" content="2022-02-03T06:58:06.625Z">
 <meta property="article:author" content="zhongyupei">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/python/数据可视化/使用plotly模拟掷骰子/newplot1.png">
   
     <link rel="alternative" href="/atom.xml" title="JiaFeng的博客" type="application/atom+xml">
   
@@ -156,168 +164,186 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-使用plotly模拟掷骰子-1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-02-03T07:05:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/">csv文件格式</a>
+    <h1 class="article-title" itemprop="name">
+      使用plotly模拟掷骰子
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/03/%E4%BD%BF%E7%94%A8plotly%E6%A8%A1%E6%8B%9F%E6%8E%B7%E9%AA%B0%E5%AD%90-1/" class="archive-article-date">
+        
+        <a href="/2022/02/03/%E4%BD%BF%E7%94%A8plotly%E6%A8%A1%E6%8B%9F%E6%8E%B7%E9%AA%B0%E5%AD%90-1/" class="archive-article-date">
   	<time datetime="2022-02-03T06:57:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/03/%E4%BD%BF%E7%94%A8plotly%E6%A8%A1%E6%8B%9F%E6%8E%B7%E9%AA%B0%E5%AD%90-1/">使用plotly模拟掷骰子</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="使用plotly模拟掷骰子"><a href="#使用plotly模拟掷骰子" class="headerlink" title="使用plotly模拟掷骰子"></a>使用plotly模拟掷骰子</h1><hr>
+<p>[TOC]</p>
+<h3 id="1、安装plotly模块"><a href="#1、安装plotly模块" class="headerlink" title="1、安装plotly模块"></a>1、安装plotly模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python -m pip install --user plotly</span><br></pre></td></tr></table></figure>
+<p>这里的修改源的操作不再赘述，详情查看“matplotlib的使用”那部分笔记的内容；</p>
+<h3 id="2、创建Die类："><a href="#2、创建Die类：" class="headerlink" title="2、创建Die类："></a>2、创建Die类：</h3><p>为模拟掷一个骰子的情况，我们创建下面的类：<br><em><strong>die.py</strong></em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Die</span>:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;表示一个骰子的类。&quot;&quot;&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,num_sides=<span class="number">6</span></span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;骰子默认为6面。&quot;&quot;&quot;</span></span><br><span class="line">        self.num_sides = num_sides</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rolling</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;建立一个生成随机数的方法&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> randint(<span class="number">1</span>, self.num_sides)</span><br><span class="line">        <span class="comment"># randint()方法生成的是从1到num_sides之间的一个随机数值</span></span><br></pre></td></tr></table></figure>
+<p>&#x3D;&#x3D;randint()方法创建的是一个从1,num_sides之间的一个随机值；&#x3D;&#x3D;<br><em><strong>这里的意思是返回一个从1到num_sides之间的值，且包括1和num_sides这两个数；</strong></em></p>
+<h3 id="3、掷骰子："><a href="#3、掷骰子：" class="headerlink" title="3、掷骰子："></a>3、掷骰子：</h3><p>使用这个类来创建图表前，先来掷D6，将结果打印出来，并确认结果是合理的；<br><em><strong>die_vision.py</strong></em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> die <span class="keyword">import</span> Die</span><br><span class="line"><span class="comment"># 用类来创建一个对象：</span></span><br><span class="line">die = Die()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个由结果组成的数组，以便后面对其进行分析</span></span><br><span class="line">results = []</span><br><span class="line"><span class="comment"># 创建一个生成随机数，并且保存进入由结果组成的数组的列表中，并且，循环100次；</span></span><br><span class="line"><span class="keyword">for</span> roll_number <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    result = die.rolling()</span><br><span class="line">    results.append(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印最后的结果；</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="4、分析结果"><a href="#4、分析结果" class="headerlink" title="4、分析结果"></a>4、分析结果</h3><p>就是在这个过程中需要去统计每个数字出现的次数,在列表中可以通过count()方法来完成这样的一个目的：<br><em><strong>die_vision.py</strong></em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> die <span class="keyword">import</span> Die</span><br><span class="line"><span class="comment"># 用Die类来创建一个die对象：</span></span><br><span class="line">die = Die()</span><br><span class="line"><span class="comment"># 把die对象所生成的随机数来制作成列表：</span></span><br><span class="line">results = []</span><br><span class="line"><span class="keyword">for</span> roll_number <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    result = die.rolling()</span><br><span class="line">    results.append(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个frequencies列表来给出现的对应的数字计数：</span></span><br><span class="line">frequencies = []</span><br><span class="line"><span class="keyword">for</span> frequency <span class="keyword">in</span> <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">7</span>)):</span><br><span class="line">    count = results.count(frequency)</span><br><span class="line">    frequencies.append(count) </span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(frequencies)</span><br></pre></td></tr></table></figure>
+<p><em><strong>最后的结果输出：</strong></em><br>[135, 142, 135, 148, 135, 153]</p>
+<h3 id="5、绘制直方图"><a href="#5、绘制直方图" class="headerlink" title="5、绘制直方图"></a>5、绘制直方图</h3><p>通过频率列表就可以绘制一系列的直方图了,直方图是一种条形图，指出了各种结果出现的频率;<br>绘制直方图的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> plotly.graph_objs <span class="keyword">import</span> Bar, Layout</span><br><span class="line"><span class="keyword">from</span> plotly <span class="keyword">import</span> offline</span><br><span class="line"><span class="keyword">from</span> die <span class="keyword">import</span> Die</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用类来创建对象：</span></span><br><span class="line">die = Die()</span><br><span class="line"><span class="comment"># 来用rolling函数来进行生成一系列随机数：</span></span><br><span class="line">results = []</span><br><span class="line"><span class="keyword">for</span> roll_num <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">    result = die.rolling()</span><br><span class="line">    results.append(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建分析的列表用于统计数字产生的频率：</span></span><br><span class="line">frequencies = []</span><br><span class="line"><span class="keyword">for</span> frequency <span class="keyword">in</span> <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">7</span>)):</span><br><span class="line">    count = results.count(frequency)</span><br><span class="line">    frequencies.append(count)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对结果进行可视化：</span></span><br><span class="line">x_values = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">7</span>))</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Plotly 类 Bar() 表示用于绘制条形图的数据集，需要一个存储 x 值的列表和一个存储 y 值的列表&quot;&quot;&quot;</span></span><br><span class="line">data = [Bar(x_value,frequencies)]</span><br><span class="line"></span><br><span class="line">x_axis_config = &#123;<span class="string">&#x27;title&#x27;</span>:<span class="string">&#x27;result&#x27;</span>&#125;</span><br><span class="line">y_axis_config = &#123;<span class="string">&#x27;title&#x27;</span>:<span class="string">&#x27;frequency_results&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># Layout方法：类 Layout() 返回一个指定图表布局和配置的对象</span></span><br><span class="line">my_layout_result = Layout(title=<span class="string">&#x27;The result of 1000 &#x27;</span>,</span><br><span class="line">xaxis=x_axis_config, yaxis=y_axis_config)</span><br><span class="line"><span class="comment"># 绘制图表的指令</span></span><br><span class="line"></span><br><span class="line">offline.plot(&#123;<span class="string">&#x27;data&#x27;</span>: data, <span class="string">&#x27;layout&#x27;</span>: my_layout_result&#125;, filename=<span class="string">&#x27;d6.html&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>代码最后运行出来的结果：<br><img src='/images/python/数据可视化/使用plotly模拟掷骰子/newplot1.png' width='80%'></p>
+<h3 id="6、同时掷两个骰子"><a href="#6、同时掷两个骰子" class="headerlink" title="6、同时掷两个骰子"></a>6、同时掷两个骰子</h3><p>同时创建两个骰子，对点数进行相加；所以，对应的自变量发生改变，对应的因变量也发生了改变<br>所以，修改对应的代码即可：<br>修改后的代码如下：<br>在字典 x_axis_config 中使用了 dtick 键（见）。这项设置指定了 x 轴显示的刻度间距</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> ploty.graph_objs <span class="keyword">import</span> Bar,Layout</span><br><span class="line"><span class="keyword">from</span> ploty <span class="keyword">import</span> offline</span><br><span class="line"><span class="keyword">from</span> die <span class="keyword">import</span> Die</span><br><span class="line"></span><br><span class="line"><span class="comment">#   创建两个骰子来进行投掷计数；</span></span><br><span class="line">die_1 = Die()</span><br><span class="line">die_2 = Die()</span><br><span class="line"></span><br><span class="line"><span class="comment">#   创建1000个随机数字，作为结果放入列表中；</span></span><br><span class="line">results = []</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">    result_1 = die_1.rolling()</span><br><span class="line">    result_2 = die_2.rolling()</span><br><span class="line">    result = result_1 + result_2</span><br><span class="line">    results.append(result)</span><br><span class="line"></span><br><span class="line"><span class="comment">#   对不同的数值的数字进行缝隙，将计数结果存放到列表中；</span></span><br><span class="line">frequencies = []</span><br><span class="line"><span class="keyword">for</span> frequency <span class="keyword">in</span> <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">2</span>,<span class="number">13</span>)):</span><br><span class="line">    count = results.count(frequency)</span><br><span class="line">    frequencies.append(count)</span><br><span class="line"></span><br><span class="line"><span class="comment">#   对数据进行可视化操作：</span></span><br><span class="line">x_axis_config = &#123;<span class="string">&#x27;title&#x27;</span>:<span class="string">&#x27;result&#x27;</span>,<span class="string">&#x27;dtick&#x27;</span>:<span class="number">1</span>&#125;</span><br><span class="line">y_axis_config = &#123;<span class="string">&quot;title&#x27;:&#x27;frequencies&#x27;s result&quot;</span>&#125;</span><br><span class="line">x_label_value = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">2</span>,<span class="number">13</span>))</span><br><span class="line">data = [Bar(x=x_label_value,y=frequencies)]</span><br><span class="line">my_layout = Layout(title=<span class="string">&#x27;The result of frequency&#x27;</span>,axis=x_axis_config,yaxis=y_axis_config)</span><br><span class="line">offline.plot(&#123;<span class="string">&#x27;data&#x27;</span>:data,<span class="string">&#x27;layout&#x27;</span>:my_layout&#125;,filename=<span class="string">&#x27;zhifang.html&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>最后的示例的代码效果如下：<br><img src='/images/python/数据可视化/使用plotly模拟掷骰子/newplot.png' width='80%'></p>
+<h3 id="7、同时掷两个面数不同的骰子"><a href="#7、同时掷两个面数不同的骰子" class="headerlink" title="7、同时掷两个面数不同的骰子"></a>7、同时掷两个面数不同的骰子</h3><p>这个的处理方法和上面的是类似的，只不过是在类创建对象的时候会有些不同；(这里假设一个是6面，一个是10面)<br><em><strong>die_vision.py</strong></em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> plotly.graph_objs <span class="keyword">import</span> Bar,Layout</span><br><span class="line"><span class="keyword">from</span> plotly <span class="keyword">import</span> offline</span><br><span class="line"><span class="keyword">from</span> die <span class="keyword">import</span> Die</span><br><span class="line"></span><br><span class="line"><span class="comment">#   用类创建两骰子，一个是6个面的，一个是10个面的</span></span><br><span class="line">die_1 = Die()</span><br><span class="line">die_2 = Die(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#   用来生成两个随机数</span></span><br><span class="line">results = []</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">    result_1 = die_1.rolling()</span><br><span class="line">    result_2 = die_2.rolling()</span><br><span class="line">    result = result_1 + result_2</span><br><span class="line">    results.append(result)</span><br><span class="line"></span><br><span class="line"><span class="comment">#   用来进行计数和分析，并把值存储到列表中</span></span><br><span class="line">frequencies = []</span><br><span class="line"><span class="keyword">for</span> frequency <span class="keyword">in</span> <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">2</span>,dei_1.num_sides+die_2.num_sides+<span class="number">1</span> )):</span><br><span class="line">    count = results.count(frequency)</span><br><span class="line">    frequencies.append(count)</span><br><span class="line"></span><br><span class="line"><span class="comment">#   数据可视化</span></span><br><span class="line">x_label = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">2</span>,dei_1.num_sides+die_2.num_sides+<span class="number">1</span> )):</span><br><span class="line">x_axis_config = &#123;<span class="string">&#x27;title&#x27;</span>:<span class="string">&#x27;result&#x27;</span>,<span class="string">&#x27;dtick&#x27;</span>:<span class="number">1</span>&#125;</span><br><span class="line">y_axis_config = &#123;<span class="string">&#x27;title&#x27;</span>:<span class="string">&#x27;result_frequency&#x27;</span>&#125;</span><br><span class="line">data = [Bar(x=x_label,y=)]</span><br><span class="line"></span><br><span class="line">my_layout = Layout(title=<span class="string">&quot;The frequency of result&quot;</span>,axis=x_axis_config,yaxis=y_axis_config)</span><br><span class="line">offline.plot(&#123;<span class="string">&#x27;data&#x27;</span>:data,<span class="string">&#x27;layout&#x27;</span>:my_layout&#125;,filename=<span class="string">&#x27;yxr.html&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>上述的示例代码的运行结果；<br><img src='/images/python/数据可视化/使用plotly模拟掷骰子/yxr.png' width="80%"></p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/03/%E4%BD%BF%E7%94%A8plotly%E6%A8%A1%E6%8B%9F%E6%8E%B7%E9%AA%B0%E5%AD%90-1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/03/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5/" class="archive-article-date">
-  	<time datetime="2022-02-03T06:50:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          csv文件格式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/03/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">随机漫步</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/03/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5/">随机漫步</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/02/Matplotlib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2022-02-02T15:19:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/02/Matplotlib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">Matplotlib库的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/02/hello-world/" class="archive-article-date">
-  	<time datetime="2022-02-02T14:07:17.534Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/说明书//" class="article-tag-list-link color4">说明书</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -340,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

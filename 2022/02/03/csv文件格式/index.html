@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | JiaFeng的博客</title>
+  <title>csv文件格式 | JiaFeng的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JiaFeng的博客">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="csv文件格式要在文本文件中存储数据，一个简单方式是将数据作为一系列以逗号分隔的值 （comma-separated values）写入文件。这样的文件称为 CSV 文件  [TOC] 1、分析CSV文件头通过导入对应的csv模块，来打开对应的csv文件和读取里面的数据：对应的csvmodel.py 代码如下: 123456789101112import csv# 把文件的路径传给变量；file_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="csv文件格式">
+<meta property="og:url" content="http://example.com/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/index.html">
 <meta property="og:site_name" content="JiaFeng的博客">
+<meta property="og:description" content="csv文件格式要在文本文件中存储数据，一个简单方式是将数据作为一系列以逗号分隔的值 （comma-separated values）写入文件。这样的文件称为 CSV 文件  [TOC] 1、分析CSV文件头通过导入对应的csv模块，来打开对应的csv文件和读取里面的数据：对应的csvmodel.py 代码如下: 123456789101112import csv# 把文件的路径传给变量；file_">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/images/python/数据可视化/csv文件格式/1.png">
+<meta property="og:image" content="http://example.com/images/python/数据可视化/csv文件格式/data_vision.png">
+<meta property="og:image" content="http://example.com/images/python/数据可视化/csv文件格式/datevision.png">
+<meta property="og:image" content="http://example.com/images/python/数据可视化/csv文件格式/compare_vision.png">
+<meta property="og:image" content="http://example.com/images/python/数据可视化/csv文件格式/Figure_1.png">
+<meta property="article:published_time" content="2022-02-03T07:05:37.000Z">
+<meta property="article:modified_time" content="2022-02-03T07:05:53.095Z">
 <meta property="article:author" content="zhongyupei">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/python/数据可视化/csv文件格式/1.png">
   
     <link rel="alternative" href="/atom.xml" title="JiaFeng的博客" type="application/atom+xml">
   
@@ -156,168 +166,190 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-csv文件格式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      csv文件格式
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="archive-article-date">
+
+        
+        <a href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="archive-article-date">
   	<time datetime="2022-02-03T07:05:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/">csv文件格式</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="csv文件格式"><a href="#csv文件格式" class="headerlink" title="csv文件格式"></a>csv文件格式</h1><p>要在文本文件中存储数据，一个简单方式是将数据作为一系列以逗号分隔的值 （comma-separated values）写入文件。这样的文件称为 CSV 文件</p>
+<hr>
+<p>[TOC]</p>
+<h3 id="1、分析CSV文件头"><a href="#1、分析CSV文件头" class="headerlink" title="1、分析CSV文件头"></a>1、分析CSV文件头</h3><p>通过导入对应的csv模块，来打开对应的csv文件和读取里面的数据：<br>对应的<br><em><strong>csvmodel.py</strong></em> 代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># 把文件的路径传给变量；</span></span><br><span class="line">file_url = <span class="string">&#x27;./XXXXX.csv&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开这个文件，并将返回的文件对象赋给f</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(fire_url) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;调用csv.reader()并将前面存储的文件对象作为实参传递给它&quot;&quot;&quot;</span></span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    <span class="comment"># 模块csv包含函数next()，调用它并传入阅读器对象时，它将返回文件中的下一行,并将值返回给变量；</span></span><br><span class="line">    head_read = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="comment"># 输出变量里面的值；</span></span><br><span class="line">    <span class="built_in">print</span>(head_read)</span><br></pre></td></tr></table></figure>
+<p>最后的代码的输出是列表的形式：<br>    [‘STATION’, ‘NAME’, ‘DATE’, ‘PRCP’, ‘TAVG’, ‘TMAX’, ‘TMIN’]</p>
+<h3 id="2、打印文件头及其位置"><a href="#2、打印文件头及其位置" class="headerlink" title="2、打印文件头及其位置:"></a>2、打印文件头及其位置:</h3><p>enumerate()返回一个列表的索引值和对应的值；这个和字典的用法有一点相似：<br><em><strong>csvmodel.py</strong></em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">file_url = <span class="string">&quot;./XXXX.csv&quot;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_erl) <span class="keyword">as</span> f:</span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    head_reader = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="keyword">for</span> index,value <span class="keyword">in</span> <span class="built_in">enumerate</span>(head_reader):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;index&#125;</span> - <span class="subst">&#123;value&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>上述代码最后的输出：</strong><br>0-STATION<br>1-NAME<br>2-DATE<br>3-PRCP<br>4-TAVG<br>5-TMAX<br>6-TMIN</p>
+<h3 id="3、提取并读取数据"><a href="#3、提取并读取数据" class="headerlink" title="3、提取并读取数据"></a>3、提取并读取数据</h3><p>在for循环里对reader阅读器对象进行操作；列表的索引值是列表名称[索引值]中间没有点；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./sitka_weather_07-2018_simple.csv&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    hear_reader = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="comment">#for index,value in enumerate(hear_reader):</span></span><br><span class="line">    <span class="comment">#    print(f&quot;&#123;index&#125;-&#123;value&#125;&quot;)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个阅读器，对下面的阅读器的内容进行处理：</span></span><br><span class="line">    results = []</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> reader:</span><br><span class="line">        result = value[<span class="number">5</span>]</span><br><span class="line">        results.append(result)</span><br><span class="line">    <span class="built_in">print</span>(results)</span><br></pre></td></tr></table></figure>
+<p>在这里csv.reader(f)所创建的对象是“阅读器”，里面存储的是列表，如果直接的print()所创建的对象，会得到一个&lt;_csv.reader object at 0x7fcd5a913ba0&gt;这样的值；</p>
+<h3 id="4、绘制图像："><a href="#4、绘制图像：" class="headerlink" title="4、绘制图像："></a>4、绘制图像：</h3><p>使用到之前学的matplotlib.pyplot制图，来完成这一部分的内容：(代码如下：)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">file_url = <span class="string">&#x27;./xxxx.csv&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_url) <span class="keyword">as</span> f:</span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    head_file = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="built_in">print</span>(head_file)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 统计csv文件里面的index=5对应的索引值：</span></span><br><span class="line">    results = []</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> reader:</span><br><span class="line">        result = <span class="built_in">int</span>(value[<span class="number">5</span>])</span><br><span class="line">        results.append(result)</span><br><span class="line"></span><br><span class="line"><span class="comment">#   数据可视化：</span></span><br><span class="line">plt.style.use(<span class="string">&#x27;seabron&#x27;</span>)</span><br><span class="line">fig,ax = plt.subplots()</span><br><span class="line">ax.plot(results,c=<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">ax.set_title(<span class="string">&#x27;t-t&#x27;</span>,fontsize=<span class="number">24</span>)</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;time&#x27;</span>,fontsize=<span class="number">14</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;temperture&#x27;</span>,fontsize=<span class="number">14</span>)</span><br><span class="line">ax.tick_params(axis=<span class="string">&#x27;both&#x27;</span>,labelside=<span class="number">14</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<img src="/images/python/数据可视化/csv文件格式/1.png" width="80%">
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="5、模块-datetime："><a href="#5、模块-datetime：" class="headerlink" title="5、模块 datetime："></a>5、模块 datetime：</h3><p>在这里直接加入在python3终端上的实验内容即可，不多加更多的说明：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line">first_time = dt.strptime(<span class="string">&#x27;2022-01-31&#x27;</span>,<span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(first_time)</span><br></pre></td></tr></table></figure>
+<p>这里的代码的输出是：<br>2022-01-30 00:00:00</p>
+<h3 id="6、在图中添加日期："><a href="#6、在图中添加日期：" class="headerlink" title="6、在图中添加日期："></a>6、在图中添加日期：</h3><p>先回溯之前的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line">file_url = <span class="string">&#x27;./XXXXXX.csv&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_url) <span class="keyword">as</span> f:</span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    head_line = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="comment">#   把csv文件的第一行的内容输出</span></span><br><span class="line">    <span class="built_in">print</span>(head_line)</span><br><span class="line">    highs = []</span><br><span class="line">    dates = []</span><br><span class="line">    <span class="comment">#   把对应的温度的最高值和时间值存到两个列表中；</span></span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> reader:</span><br><span class="line">        high = <span class="built_in">int</span>(value[<span class="number">5</span>])</span><br><span class="line">        date = value[<span class="number">2</span>]</span><br><span class="line">        highs.append(high)</span><br><span class="line">        dates.append(high)</span><br><span class="line"></span><br><span class="line"><span class="comment">#   将数据可视化：</span></span><br><span class="line">plt.style.use(<span class="string">&#x27;seaborn&#x27;</span>)</span><br><span class="line">fig,ax = plt.subplots</span><br><span class="line">ax.plot(dates,highs,c=<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line"><span class="comment">#   调用方法来进行</span></span><br><span class="line">fig.autofmt_xdate()</span><br><span class="line">ax.set_title(<span class="string">&#x27;The maxmum temperture of time&#x27;</span>,fontsize=<span class="number">24</span>)</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;date&#x27;</span>,fontsize=<span class="number">16</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;The maxmum of temperture&#x27;</span>,fontsize=<span class="number">16</span>)</span><br><span class="line">ax.tick_params(axis=<span class="string">&#x27;both&#x27;</span>,which=<span class="string">&#x27;major&#x27;</span>,labelsize=<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">plt.show</span><br></pre></td></tr></table></figure>
+<img src='/images/python/数据可视化/csv文件格式/data_vision.png'>
 
+<h3 id="7、涵盖更长的时间："><a href="#7、涵盖更长的时间：" class="headerlink" title="7、涵盖更长的时间："></a>7、涵盖更长的时间：</h3><p><em><strong>这里就是换了一个csv文件来进行操作</strong></em><br><em><strong>xiteba.py</strong></em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line">file_url = <span class="string">&#x27;./XXXXXX.csv&#x27;</span><span class="comment">#  在这里更换文件的url即可；</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_url) <span class="keyword">as</span> f:</span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    head_line = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="comment">#   把csv文件的第一行的内容输出</span></span><br><span class="line">    <span class="built_in">print</span>(head_line)</span><br><span class="line">    highs = []</span><br><span class="line">    dates = []</span><br><span class="line">    <span class="comment">#   把对应的温度的最高值和时间值存到两个列表中；</span></span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> reader:</span><br><span class="line">        high = <span class="built_in">int</span>(value[<span class="number">5</span>])</span><br><span class="line">        date = value[<span class="number">2</span>]</span><br><span class="line">        highs.append(high)</span><br><span class="line">        dates.append(high)</span><br><span class="line"></span><br><span class="line"><span class="comment">#   将数据可视化：</span></span><br><span class="line">plt.style.use(<span class="string">&#x27;seaborn&#x27;</span>)</span><br><span class="line">fig,ax = plt.subplots</span><br><span class="line">ax.plot(dates,highs,c=<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line"><span class="comment">#   调用方法来进行</span></span><br><span class="line">fig.autofmt_xdate()</span><br><span class="line">ax.set_title(<span class="string">&#x27;The maxmum temperture of time&#x27;</span>,fontsize=<span class="number">24</span>)</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;date&#x27;</span>,fontsize=<span class="number">16</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;The maxmum of temperture&#x27;</span>,fontsize=<span class="number">16</span>)</span><br><span class="line">ax.tick_params(axis=<span class="string">&#x27;both&#x27;</span>,which=<span class="string">&#x27;major&#x27;</span>,labelsize=<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">plt.show</span><br></pre></td></tr></table></figure>
+<p>上述代码的最终的演示效果；<br><img src='/images/python/数据可视化/csv文件格式/datevision.png'></p>
+<h3 id="8、再绘制一个数据系列："><a href="#8、再绘制一个数据系列：" class="headerlink" title="8、再绘制一个数据系列："></a>8、再绘制一个数据系列：</h3><p>这里的意图是为了在同一幅图上绘制两幅对比的图形：<br>一个表示对应的时间对应的最高温度和最低温度；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./xxxx.csv&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    head_line = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="built_in">print</span>(head_line)</span><br><span class="line">    highs = []</span><br><span class="line">    lows = []</span><br><span class="line">    dates = []</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> reader:</span><br><span class="line">        high = <span class="built_in">int</span>(value[<span class="number">5</span>])</span><br><span class="line">        low = <span class="built_in">int</span>(value[<span class="number">6</span>])</span><br><span class="line">        date = dt.strptime(value[<span class="number">2</span>],<span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br><span class="line">        highs.append(high)</span><br><span class="line">        lows.append(low)</span><br><span class="line">        dates.append(date)</span><br><span class="line">fig,ax = subplots()</span><br><span class="line">ax.plot(dates,highs,c=<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">ax.plot(dates,lows,c=<span class="string">&#x27;blue&#x27;</span>)</span><br><span class="line">ax.set_title(<span class="string">&#x27;The temperture of time&#x27;</span>,fontsize=<span class="number">24</span>)</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;Time&#x27;</span>,fontsize=<span class="number">16</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;Temperture&#x27;</span>,fontsize=<span class="number">16</span>)</span><br><span class="line">ax.tick_params(axis=<span class="string">&#x27;both&#x27;</span>,which=<span class="string">&#x27;major&#x27;</span>,labelsize=<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>最后代码的运行效果如下：<br><img src='/images/python/数据可视化/csv文件格式/compare_vision.png'></p>
+<h3 id="9、给图表区域着色："><a href="#9、给图表区域着色：" class="headerlink" title="9、给图表区域着色："></a>9、给图表区域着色：</h3><p>添加两个数据系列后，就可以知道每天的温度范围了。下面来给这个图表做最后的修饰，通过着色来呈现每天的温度范围。为此，将使用方法fill_between()。它接受一个x值系列和两个y值系列，并填充两个y值系列之间的空间,所以，这里是对fill_between()函数的灵活运用：</p>
+<p>实参 alpha 指定颜色的透明度。 alpha 值为 0 表示完全透明，为完全不透明。通过将 alpha 设置为 0.5，可让红色和蓝色折线的颜色看起来更浅。<br>向 fill_between() 传递一个 x 值系列（列表 dates ），以及两个 y 值系列（ highs 和 lows ）。实参 facecolor 指定填充区域的颜色，还将 alpha 设置成了较小的值 0.1，让填充区域将两个数据系列连接起来的同时不分散观察者的注意力</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line">file_url = <span class="string">&#x27;./xxxx.csv&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_url) <span class="keyword">as</span> f:</span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    head_line = <span class="built_in">next</span>(reader)</span><br><span class="line">    highs = []</span><br><span class="line">    lows = []</span><br><span class="line">    dates = []</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> reader:</span><br><span class="line">        high = <span class="built_in">int</span>(value[<span class="number">5</span>])</span><br><span class="line">        low = <span class="built_in">int</span>(value[<span class="number">6</span>])</span><br><span class="line">        date = dt.strptime(value[<span class="number">2</span>],<span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br><span class="line">        highs.append(high)</span><br><span class="line">        lows.append(low)</span><br><span class="line">        dates.append(date)</span><br><span class="line">fig,ax = plt.subplots()</span><br><span class="line">ax.plot(dates,highs,c=<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">ax.plot(dates,lows,c=<span class="string">&#x27;blue&#x27;</span>)</span><br><span class="line">ax.fill_between(dates,highs,lows,facecolor=<span class="string">&#x27;green&#x27;</span>,alpha=<span class="number">0.5</span>)</span><br><span class="line">ax.set_title(<span class="string">&#x27;The temperture of time&#x27;</span>,fontsize=<span class="number">24</span>)</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;Time&#x27;</span>,fontsize=<span class="number">16</span>)</span><br><span class="line">fig.autofmt_xdata()</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;Temperture&#x27;</span>,fontsize=<span class="number">16</span>)</span><br><span class="line">ax.tick_params(axis=<span class="string">&#x27;both&#x27;</span>,which=<span class="string">&#x27;major&#x27;</span>,labelsize=<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>上述代码的运行结果如下:<br><img src='/images/python/数据可视化/csv文件格式/Figure_1.png'></p>
+<h3 id="10、错误检查："><a href="#10、错误检查：" class="headerlink" title="10、错误检查："></a>10、错误检查：</h3><p>我们应该能够使用任何地方的天气数据来运行sitka_highs_lows.py 中的代码，但有些气象站收集的数据种类不同，有些气象站会偶尔出现故障，未能收集部分或全部应收集的数据。缺失数据可能引发异常，如果不妥善处理，可能导致程序崩溃<br>使用 try-except-else 代码块来处理数据缺失的问题(对应的是异常那个部分的知识点)；<br><em><strong>这个部分的代码详细情况参照书上P311页；</strong></em></p>
+<h3 id="11、自己动手下载数据："><a href="#11、自己动手下载数据：" class="headerlink" title="11、自己动手下载数据："></a>11、自己动手下载数据：</h3><p>详细步骤参考P313页;</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/03/%E4%BD%BF%E7%94%A8plotly%E6%A8%A1%E6%8B%9F%E6%8E%B7%E9%AA%B0%E5%AD%90-1/" class="archive-article-date">
-  	<time datetime="2022-02-03T06:57:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/02/03/%E4%BD%BF%E7%94%A8plotly%E6%A8%A1%E6%8B%9F%E6%8E%B7%E9%AA%B0%E5%AD%90-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用plotly模拟掷骰子</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/03/%E4%BD%BF%E7%94%A8plotly%E6%A8%A1%E6%8B%9F%E6%8E%B7%E9%AA%B0%E5%AD%90-1/">使用plotly模拟掷骰子</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/03/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5/" class="archive-article-date">
-  	<time datetime="2022-02-03T06:50:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/03/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5/">随机漫步</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/02/Matplotlib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2022-02-02T15:19:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/02/Matplotlib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">Matplotlib库的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/02/hello-world/" class="archive-article-date">
-  	<time datetime="2022-02-02T14:07:17.534Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/说明书//" class="article-tag-list-link color4">说明书</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -340,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
