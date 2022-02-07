@@ -164,6 +164,158 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/07/%E6%96%87%E4%BB%B6/">文件</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/07/%E6%96%87%E4%BB%B6/" class="archive-article-date">
+  	<time datetime="2022-02-07T09:06:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>让程序和更大的外部世界进行交流，而操控文件就是为了很好的满足这一点；让外部的文件和Python解释器所运行的程序之间进行交互；</p>
+<hr>
+<p>[TOC]</p>
+<h3 id="1、打开文件："><a href="#1、打开文件：" class="headerlink" title="1、打开文件："></a>1、打开文件：</h3><p>打开文件可以使用open()函数，它位于自动导入的模块io中；可以直接被调用，而函数open()将&#x3D;&#x3D;文件名&#x3D;&#x3D;作为唯一必不可少的参数，并返回一个文件对象；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里open()函数的参数中必要的参数是文件所在的地址，可以值绝对地址，也可以是相对地址；</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;file_url&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>如果指定的文件不存在的话，就会出现下面的类似的报错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line 1, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">FileNotFoundError: [Errno 2] No such file or directory: <span class="string">&#x27;file_url&#x27;</span></span><br></pre></td></tr></table></figure>
+<h5 id="x3D-x3D-1-对比”with-open-‘file-url’-as-filename”的用法-x3D-x3D"><a href="#x3D-x3D-1-对比”with-open-‘file-url’-as-filename”的用法-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;1)对比”with open(‘file_url’) as filename”的用法:&#x3D;&#x3D;"></a>&#x3D;&#x3D;1)对比”with open(‘file_url’) as filename”的用法:&#x3D;&#x3D;</h5><p>关键字with在不需要访问文件后将其关闭。with open(‘file_url’) as filename:这句话中，调用了open(),但是没有调用close()来关闭文件。也可以调用open()和close()来打开和关闭文件，但是这样做的话，如果程序存在bug导致方法close()为执行，文件将不会关闭。</p>
+<h5 id="2-open-函数对应的文件模式："><a href="#2-open-函数对应的文件模式：" class="headerlink" title="2)open()函数对应的文件模式："></a>2)open()函数对应的文件模式：</h5><table>
+<thead>
+<tr>
+<th align="center">值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">‘r’</td>
+<td align="center">读取模式(默认值)</td>
+</tr>
+<tr>
+<td align="center">‘w’</td>
+<td align="center">写入模式</td>
+</tr>
+<tr>
+<td align="center">‘x’</td>
+<td align="center">独占写入模式</td>
+</tr>
+<tr>
+<td align="center">‘a’</td>
+<td align="center">附加模式</td>
+</tr>
+<tr>
+<td align="center">‘b’</td>
+<td align="center">二进制模式（与其他模式结合使用）</td>
+</tr>
+<tr>
+<td align="center">‘t’</td>
+<td align="center">文本模式（默认值，与其他模式结合使用）</td>
+</tr>
+<tr>
+<td align="center">‘+’</td>
+<td align="center">读写模式（与其他模式结合使用）</td>
+</tr>
+</tbody></table>
+<h6 id="x3D-x3D-解释：-x3D-x3D"><a href="#x3D-x3D-解释：-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;解释：&#x3D;&#x3D;"></a>&#x3D;&#x3D;<strong>解释：</strong>&#x3D;&#x3D;</h6><p><strong>‘w’:</strong> 写入模式让你能够写入文件，并在文件不存在时创建它。在写入模式下打开文件时，既有内容将被删除（截断），并从文件开头处开始写入；<br><strong>‘x’:</strong> 独占写入模式更进一步，在文件已存在时引发FileExistsError异常。<br><strong>‘a’:</strong> 如果要在既有文件末尾继续写入，可使用附加模式。<br><strong>‘+’:</strong> 可与其他任何模式结合起来使用，表示既可读取也可写入。若要打开一个文本文件进行读写，可以使用’r+’。【注】：’r+’和’w+’之间有个重要差别：后者截断文件，而前者不会；<br><strong>‘rt’:</strong> 为默认模式，这意味着将把文件视为经过编码的Unicode文本，因此将自动执行解码和编码，且默认使用UTF-8编码。要指定其他编码和Unicode错误处理策略，可使用关键字参数encoding和errors。<br><strong>通常，Python使用通用换行模式</strong>：<br>在这种模式下，后面讨论的readline等方法能够识别所有合法的换行符（’\n’、’\r’和’\r\n’）;如果要使用这种模式，同时禁止自动转换，可将关键字参数newline设置为空字符串，如open(name, newline&#x3D;’’)。如果要指定只将’\r’或’\r\n’视为合法的行尾字符，可将参数newline设置为相应的行尾字符。这样，读取时不会对行尾字符进行转换，但写入时将把’\n’替换为指定的行尾字符;<br><strong>高级的操作：</strong><br>还有几个更为高级的可选参数，用于控制缓冲以及更直接地处理文件描述符。要获取有关这些参数的详细信息，请参阅Python文档或在交互式解释器中运行 &#x3D;&#x3D;<strong>help(open)</strong>&#x3D;&#x3D;</p>
+<h3 id="2、文件的基本方法："><a href="#2、文件的基本方法：" class="headerlink" title="2、文件的基本方法："></a>2、文件的基本方法：</h3><p>在知道如何打开文件后，下一步就是使用他们（文件里的内容）；下面将介绍处理文件对象的一些基本方法，和处理其他类似于文件的对象（有时候成为“流”）的基本方法；<br>三个标准流：<br><strong>1）</strong> 一个标准数据输入源是sys.stdin。当程序从标准输入读取时，你可通过输入来提供文本，也可使用管道将标准输入关联到其他程序的标准输出。</p>
+<p><strong>2）</strong> 你提供给print的文本出现在sys.stdout中，向input提供的提示信息也出现在这里。写入到sys.stdout的数据通常出现在屏幕上，但可使用管道将其重定向到另一个程序的标准输入。</p>
+<p><strong>3）</strong> 错误消息（如栈跟踪）被写入到sys.stderr，但与写入到sys.stdout的内容一样，可对其进行重定向。</p>
+<h5 id="1）读取和写入："><a href="#1）读取和写入：" class="headerlink" title="1）读取和写入："></a>1）读取和写入：</h5><p>文件最重要的功能就是提供和接受数据。可以假设有一个名为filename的类似于文件的对象，可使用filename.write来写入数据，还可以用filename.read来读取数据；而在数据的形式上，我们也可以发现，在文本和二进制的模式下，基本上可以将str和bytes类用作数据；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="built_in">open</span>(<span class="string">&#x27;somefile.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">&#x27;Hello, &#x27;</span>)</span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">&#x27;world!&#x27;</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.close()</span><br></pre></td></tr></table></figure>
+<p>读取也一样简单，只需告诉流你要读取多少个字符（在二进制模式下是多少字节）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="built_in">open</span>(<span class="string">&#x27;somefile.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read(<span class="number">4</span>)</span><br><span class="line"><span class="string">&#x27;Hell&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line"><span class="string">&#x27;o, world!&#x27;</span></span><br></pre></td></tr></table></figure>
+<h5 id="2）使用管道重定向输出："><a href="#2）使用管道重定向输出：" class="headerlink" title="2）使用管道重定向输出："></a>2）使用管道重定向输出：</h5><p>在bash等shell中，可依次输入多个命令，并使用管道将它们链接起来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat somefile.txt | python3 somesscript.py | sort</span><br></pre></td></tr></table></figure>
+<p><strong>1.</strong> cat somefile.txt：将文件somefile.txt的内容写入到标准输出（sys.stdout）。<br><strong>2.</strong> python somescript.py：执行Python脚本somescript。这个脚本从其标准输入中读取，并将结果写入到标准输出。<br><strong>3.</strong> sort：读取标准输入（sys.stdin）中的所有文本，将各行按字母顺序排序，并将结果写入到标准输出。<br>在这里，somescript.py的源代码如下图所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">text = sys.stdin.read()</span><br><span class="line">words = text.split()</span><br><span class="line">word_count = <span class="built_in">len</span>(words)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;word_count&quot;</span>:,word_count)</span><br></pre></td></tr></table></figure>
+<p>上述的bash语句的运行结果下所示：<br>WordCount: 5</p>
+<h5 id="x3D-x3D-3-随机存取-x3D-x3D"><a href="#x3D-x3D-3-随机存取-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;3)随机存取:&#x3D;&#x3D;"></a>&#x3D;&#x3D;<strong>3)随机存取:</strong>&#x3D;&#x3D;</h5><p><strong>方法seek():</strong><br>方法seek(offset[, whence])将当前位置（执行读取或写入的位置）移到offset和whence指定的地方<br>参数offset指定了字节（字符）数，而参数whence默认为io.SEEK_SET（0），这意味着偏移量是相对于文件开头的（偏移量不能为负数）。参数whence还可设置为io.SEEK_CUR（1）或io.SEEK_END（2），其中前者表示相对于当前位置进行移动（偏移量可以为负），而后者表示相对于文件末尾进行移动<br><strong>方法tell():</strong><br>方法tell()返回当前位于文件的什么位置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="built_in">open</span>(<span class="string">r&#x27;C:\text\somefile.txt&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read(<span class="number">3</span>)</span><br><span class="line"><span class="string">&#x27;012&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read(<span class="number">2</span>)</span><br><span class="line"><span class="string">&#x27;34&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.tell()</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="4-读取和写入行："><a href="#4-读取和写入行：" class="headerlink" title="4)读取和写入行："></a>4)读取和写入行：</h5><p>与其逐个读取流中的字符，不如成行地读取。要读取一行（从当前位置到下一个分行符的文本），可使用方法readline。调用这个方法时，可以不提供任何参数（在这种情况下，将读取一行并返回它）；也可以提供一个非负整数，指定readline最多可以读取多少个字符。</p>
+<p>用下述代码来进行测试：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="built_in">open</span>(<span class="string">&#x27;file_url&#x27;</span>)</span><br><span class="line">content = filename.readline()</span><br><span class="line"><span class="built_in">print</span>(content)</span><br><span class="line">filename.close()</span><br></pre></td></tr></table></figure>
+<p>上述代码的最终的运行成果如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello Python,My name is zhongyupei</span><br></pre></td></tr></table></figure>
+<p>如果在readline()的括号中限制数量的话，看最后的输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="built_in">open</span>(<span class="string">&#x27;file_url&#x27;</span>)</span><br><span class="line">content = filename.readline(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(content)</span><br></pre></td></tr></table></figure>
+<p>最后的输出结果，如下图所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br></pre></td></tr></table></figure>
+<p><em><strong>readlines():w2</strong></em> 要读取文件中的所有行，并以列表的方式返回它们，可使用方法readlines</p>
+<h5 id="5-关闭文件"><a href="#5-关闭文件" class="headerlink" title="5)关闭文件:"></a>5)关闭文件:</h5><p>在打开文件之后可以调用close()语句来关闭文件；对于写入过的文件，一定要将其关闭，因为Python可能缓冲你写的数据（将数据暂存在某个地方，以提高效率）如果要重置缓冲，让所做的修改反映到磁盘文件中，但又不想关闭文件，可使用方法flush。<br>要是确保文件得以关闭，可以使用一条try&#x2F;finally语句，并在finally子句中调用close。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在这里打开文件</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="comment"># 将数据写入到文件中</span></span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  file.close()</span><br></pre></td></tr></table></figure>
+<p>而上述的代码可以用with语句来进行代替：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;file_url&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">  <span class="comment"># 开始对 url = file_url 的文件进行操作；</span></span><br></pre></td></tr></table></figure>
+<h6 id="上下文管理器："><a href="#上下文管理器：" class="headerlink" title="上下文管理器："></a>上下文管理器：</h6><p>  <strong>上下文管理器</strong></p>
+<p>with语句实际上是一个非常通用的结构，允许你使用所谓的上下文管理器。上下文管理器是支持两个方法的对象：__enter__和__exit__。<br><strong>1）</strong> 方法__enter__不接受任何参数，在进入with语句时被调用，其返回值被赋给关键字as后面的变量。<br><strong>2）</strong> 方法__exit__接受三个参数：异常类型、异常对象和异常跟踪。它在离开方法时被调用（通过前述参数将引发的异常提供给它）。如果__exit__返回False，将抑制所有的异常。<br>文件也可用作上下文管理器。它们的方法__enter__返回文件对象本身，而方法__exit__关闭文件。有关这项极其复杂而强大的功能的详细信息，请参阅“Python参考手册”中对上下文管理器的描述，另请参阅“Python库参考手册”中介绍上下文管理器类型和contextlib的部分</p>
+<h3 id="3、迭代文件内容："><a href="#3、迭代文件内容：" class="headerlink" title="3、迭代文件内容："></a>3、迭代文件内容：</h3><p>主要是通过for循环来完成对应的操作；<br>对应的内容查看《Python基础教程》的文件11.3的内容；</p>
+<hr>
+<p>附：针对字符串而言在分析文本的时候有一个非常重要的方法split();split()方法是把一空格为分割符号，将字符串分析成多个部分，并将其全存储进一个列表中；</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">python基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/07/%E6%96%87%E4%BB%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-json文件格式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -863,6 +1015,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">python-数据可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">python基础</a>
               </li>
             
             <div class="clearfix"></div>
