@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>随机漫步 | JiaFeng的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="随机漫步用 Python 来生成随机漫步数据，再使用 Matplotlib 以引人瞩目的方式将这些数据呈现出来；随机漫步是这样行走得到的路径：每次行走都是完全随机的、没有明确的方向，结果是由一系列随机决策决定的。你可以将随机漫步看作蚂蚁在晕头转向的情况下，每次都沿随机的方向前行所经过的路径；  [TOC] 1、创建RandomWalk类：为模拟随机漫步，将创建一个名为 RandomWalk 的类，">
+  <meta name="description" content="随机漫步用 Python 来生成随机漫步数据，再使用 Matplotlib 以引人瞩目的方式将这些数据呈现出来；随机漫步是这样行走得到的路径：每次行走都是完全随机的、没有明确的方向，结果是由一系列随机决策决定的。你可以将随机漫步看作蚂蚁在晕头转向的情况下，每次都沿随机的方向前行所经过的路径；  1、创建RandomWalk类：为模拟随机漫步，将创建一个名为 RandomWalk 的类，它随机地选择">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机漫步">
 <meta property="og:url" content="http://example.com/2022/02/03/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5/index.html">
 <meta property="og:site_name" content="JiaFeng的博客">
-<meta property="og:description" content="随机漫步用 Python 来生成随机漫步数据，再使用 Matplotlib 以引人瞩目的方式将这些数据呈现出来；随机漫步是这样行走得到的路径：每次行走都是完全随机的、没有明确的方向，结果是由一系列随机决策决定的。你可以将随机漫步看作蚂蚁在晕头转向的情况下，每次都沿随机的方向前行所经过的路径；  [TOC] 1、创建RandomWalk类：为模拟随机漫步，将创建一个名为 RandomWalk 的类，">
+<meta property="og:description" content="随机漫步用 Python 来生成随机漫步数据，再使用 Matplotlib 以引人瞩目的方式将这些数据呈现出来；随机漫步是这样行走得到的路径：每次行走都是完全随机的、没有明确的方向，结果是由一系列随机决策决定的。你可以将随机漫步看作蚂蚁在晕头转向的情况下，每次都沿随机的方向前行所经过的路径；  1、创建RandomWalk类：为模拟随机漫步，将创建一个名为 RandomWalk 的类，它随机地选择">
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/images/python/数据可视化/随机漫步/first.png">
 <meta property="og:image" content="http://example.com/images/python/数据可视化/随机漫步/second.png">
 <meta property="article:published_time" content="2022-02-03T06:50:50.000Z">
-<meta property="article:modified_time" content="2022-02-05T02:22:07.681Z">
+<meta property="article:modified_time" content="2022-02-07T09:48:43.753Z">
 <meta property="article:author" content="zhongyupei">
 <meta property="article:tag" content="python-数据可视化">
 <meta name="twitter:card" content="summary">
@@ -27,7 +27,7 @@
     <link rel="alternative" href="/atom.xml" title="JiaFeng的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/jiafeng.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -192,7 +192,6 @@
       
         <h1 id="随机漫步"><a href="#随机漫步" class="headerlink" title="随机漫步"></a>随机漫步</h1><p>用 Python 来生成随机漫步数据，再使用 Matplotlib 以引人瞩目的方式将这些数据呈现出来；随机漫步是这样行走得到的路径：每次行走都是完全随机的、没有明确的方向，结果是由一系列随机决策决定的。你可以将随机漫步看作蚂蚁在晕头转向的情况下，每次都沿随机的方向前行所经过的路径；</p>
 <hr>
-<p>[TOC]</p>
 <h3 id="1、创建RandomWalk类："><a href="#1、创建RandomWalk类：" class="headerlink" title="1、创建RandomWalk类："></a>1、创建RandomWalk类：</h3><p>为模拟随机漫步，将创建一个名为 RandomWalk 的类，它随机地选择前进方向。这个类需要三个属性：一个是存储随机漫步次数的变量，其他两个是列表，分别存储随机漫步经过的每个点的 x 坐标和 y 坐标；<br>代码示例如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random <span class="keyword">as</span> choice</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWalk</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,number_point=<span class="number">5000</span></span>):</span></span><br><span class="line">        <span class="comment"># 存储随机漫步次数的变量：</span></span><br><span class="line">        self.number_point = number_point</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#存储随机漫步经过的每个点的x坐标：</span></span><br><span class="line">        self.x_values = [<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment">#存储随机漫步次数的每个点的y坐标：</span></span><br><span class="line">        self.y_values = [<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 <p>定义的代码段就是对应的这样的一个过程：<br>    &#x3D;&#x3D;<strong>先是，定义一个存储随机漫步次数的变量；</strong>&#x3D;&#x3D;<br>    &#x3D;&#x3D;<strong>接着定义两个列表，分别用来存储对应的点的x，y轴上的坐标值；</strong>&#x3D;&#x3D;</p>
@@ -248,6 +247,11 @@
       
     </div>
     <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
       
 	<div class="article-tag tagcloud">
@@ -355,6 +359,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5"><span class="toc-number">1.</span> <span class="toc-text">随机漫步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BARandomWalk%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">1、创建RandomWalk类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E9%80%89%E6%8B%A9%E6%96%B9%E5%90%91"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、选择方向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E7%BB%98%E5%88%B6%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5%E5%9B%BE"><span class="toc-number">1.0.3.</span> <span class="toc-text">3、绘制随机漫步图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E6%A8%A1%E6%8B%9F%E5%A4%9A%E6%AC%A1%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5"><span class="toc-number">1.0.4.</span> <span class="toc-text">4、模拟多次随机漫步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E8%AE%BE%E7%BD%AE%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5%E5%9B%BE%E7%9A%84%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.0.5.</span> <span class="toc-text">5、设置随机漫步图的样式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E7%BB%99%E7%82%B9%E7%9D%80%E8%89%B2%EF%BC%9A"><span class="toc-number">1.0.5.0.1.</span> <span class="toc-text">1) 给点着色：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-x3D-x3D-%E9%87%8D%E6%96%B0%E7%BB%98%E5%88%B6%E8%B5%B7%E7%82%B9%E5%92%8C%E7%BB%88%E7%82%B9-x3D-x3D"><span class="toc-number">1.0.5.0.2.</span> <span class="toc-text">2) &#x3D;&#x3D;重新绘制起点和终点&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-x3D-x3D-%E9%9A%90%E8%97%8F%E5%9D%90%E6%A0%87%E8%BD%B4-x3D-x3D"><span class="toc-number">1.0.5.0.3.</span> <span class="toc-text">3) &#x3D;&#x3D;隐藏坐标轴&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%A2%9E%E5%8A%A0%E7%82%B9%E6%95%B0"><span class="toc-number">1.0.5.0.4.</span> <span class="toc-text">4) 增加点数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-x3D-x3D-%E8%B0%83%E8%8A%82%E5%B0%BA%E5%AF%B8%E6%9D%A5%E9%80%82%E5%90%88%E5%B1%8F%E5%B9%95-x3D-x3D"><span class="toc-number">1.0.5.0.5.</span> <span class="toc-text">5) &#x3D;&#x3D;调节尺寸来适合屏幕&#x3D;&#x3D;</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>

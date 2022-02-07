@@ -19,7 +19,7 @@
     <link rel="alternative" href="/atom.xml" title="JiaFeng的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/jiafeng.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -186,7 +186,6 @@
       
         <h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>让程序和更大的外部世界进行交流，而操控文件就是为了很好的满足这一点；让外部的文件和Python解释器所运行的程序之间进行交互；</p>
 <hr>
-<p>[TOC]</p>
 <h3 id="1、打开文件："><a href="#1、打开文件：" class="headerlink" title="1、打开文件："></a>1、打开文件：</h3><p>打开文件可以使用open()函数，它位于自动导入的模块io中；可以直接被调用，而函数open()将&#x3D;&#x3D;文件名&#x3D;&#x3D;作为唯一必不可少的参数，并返回一个文件对象；</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里open()函数的参数中必要的参数是文件所在的地址，可以值绝对地址，也可以是相对地址；</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;file_url&#x27;</span>) </span><br></pre></td></tr></table></figure>
 <p>如果指定的文件不存在的话，就会出现下面的类似的报错：</p>
@@ -270,6 +269,11 @@
     </div>
     <div class="article-info article-info-index">
       
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
@@ -337,7 +341,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="json文件格式"><a href="#json文件格式" class="headerlink" title="json文件格式"></a>json文件格式</h1><hr>
-<p>[TOC]</p>
 <h3 id="1、查看json数据"><a href="#1、查看json数据" class="headerlink" title="1、查看json数据:"></a>1、查看json数据:</h3><p>模块 json 提供了各种探索和处理 JSON 数据的工具，其中一些有助于重新设置这个文件的格式，让我们能够更清楚地查看原始数据，继而决定如何以编程的方式来处理</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 探索数据的结构</span></span><br><span class="line">filename = <span class="string">&#x27;./XXXXX.json&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(filename) <span class="keyword">as</span> f:</span><br><span class="line">    all_data = json.load(f)</span><br><span class="line"></span><br><span class="line">readable_file = <span class="string">&#x27;xxxx.json&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(readable_file,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(all_data,f,indent=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
 <p>函数json.dump()接受一个json数据对象和一个文件对象，并将数据写入这个文件中。参数indent&#x3D;4让 dump()使用与数据结构相匹配的缩进量来设置数据的格式；</p>
@@ -360,6 +363,11 @@
       
     </div>
     <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
       
 	<div class="article-tag tagcloud">
@@ -429,7 +437,6 @@
       
         <h1 id="csv文件格式"><a href="#csv文件格式" class="headerlink" title="csv文件格式"></a>csv文件格式</h1><p>要在文本文件中存储数据，一个简单方式是将数据作为一系列以逗号分隔的值 （comma-separated values）写入文件。这样的文件称为 CSV 文件</p>
 <hr>
-<p>[TOC]</p>
 <h3 id="1、分析CSV文件头"><a href="#1、分析CSV文件头" class="headerlink" title="1、分析CSV文件头"></a>1、分析CSV文件头</h3><p>通过导入对应的csv模块，来打开对应的csv文件和读取里面的数据：<br>对应的<br><em><strong>csvmodel.py</strong></em> 代码如下:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># 把文件的路径传给变量；</span></span><br><span class="line">file_url = <span class="string">&#x27;./XXXXX.csv&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开这个文件，并将返回的文件对象赋给f</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(fire_url) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;调用csv.reader()并将前面存储的文件对象作为实参传递给它&quot;&quot;&quot;</span></span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    <span class="comment"># 模块csv包含函数next()，调用它并传入阅读器对象时，它将返回文件中的下一行,并将值返回给变量；</span></span><br><span class="line">    head_read = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="comment"># 输出变量里面的值；</span></span><br><span class="line">    <span class="built_in">print</span>(head_read)</span><br></pre></td></tr></table></figure>
 <p>最后的代码的输出是列表的形式：<br>    [‘STATION’, ‘NAME’, ‘DATE’, ‘PRCP’, ‘TAVG’, ‘TMAX’, ‘TMIN’]</p>
@@ -468,6 +475,11 @@
       
     </div>
     <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
       
 	<div class="article-tag tagcloud">
@@ -536,7 +548,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="使用plotly模拟掷骰子"><a href="#使用plotly模拟掷骰子" class="headerlink" title="使用plotly模拟掷骰子"></a>使用plotly模拟掷骰子</h1><hr>
-<p>[TOC]</p>
 <h3 id="1、安装plotly模块"><a href="#1、安装plotly模块" class="headerlink" title="1、安装plotly模块"></a>1、安装plotly模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python -m pip install --user plotly</span><br></pre></td></tr></table></figure>
 <p>这里的修改源的操作不再赘述，详情查看“matplotlib的使用”那部分笔记的内容；</p>
 <h3 id="2、创建Die类："><a href="#2、创建Die类：" class="headerlink" title="2、创建Die类："></a>2、创建Die类：</h3><p>为模拟掷一个骰子的情况，我们创建下面的类：<br><em><strong>die.py</strong></em></p>
@@ -564,6 +575,11 @@
     </div>
     <div class="article-info article-info-index">
       
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
@@ -577,6 +593,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -632,7 +659,6 @@
       
         <h1 id="随机漫步"><a href="#随机漫步" class="headerlink" title="随机漫步"></a>随机漫步</h1><p>用 Python 来生成随机漫步数据，再使用 Matplotlib 以引人瞩目的方式将这些数据呈现出来；随机漫步是这样行走得到的路径：每次行走都是完全随机的、没有明确的方向，结果是由一系列随机决策决定的。你可以将随机漫步看作蚂蚁在晕头转向的情况下，每次都沿随机的方向前行所经过的路径；</p>
 <hr>
-<p>[TOC]</p>
 <h3 id="1、创建RandomWalk类："><a href="#1、创建RandomWalk类：" class="headerlink" title="1、创建RandomWalk类："></a>1、创建RandomWalk类：</h3><p>为模拟随机漫步，将创建一个名为 RandomWalk 的类，它随机地选择前进方向。这个类需要三个属性：一个是存储随机漫步次数的变量，其他两个是列表，分别存储随机漫步经过的每个点的 x 坐标和 y 坐标；<br>代码示例如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random <span class="keyword">as</span> choice</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWalk</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,number_point=<span class="number">5000</span></span>):</span></span><br><span class="line">        <span class="comment"># 存储随机漫步次数的变量：</span></span><br><span class="line">        self.number_point = number_point</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#存储随机漫步经过的每个点的x坐标：</span></span><br><span class="line">        self.x_values = [<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment">#存储随机漫步次数的每个点的y坐标：</span></span><br><span class="line">        self.y_values = [<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 <p>定义的代码段就是对应的这样的一个过程：<br>    &#x3D;&#x3D;<strong>先是，定义一个存储随机漫步次数的变量；</strong>&#x3D;&#x3D;<br>    &#x3D;&#x3D;<strong>接着定义两个列表，分别用来存储对应的点的x，y轴上的坐标值；</strong>&#x3D;&#x3D;</p>
@@ -667,6 +693,11 @@
       
     </div>
     <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
       
 	<div class="article-tag tagcloud">
@@ -734,8 +765,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>[TOC]</p>
+        <h1 id="Matplotlib库的使用"><a href="#Matplotlib库的使用" class="headerlink" title="Matplotlib库的使用"></a>Matplotlib库的使用</h1><hr>
 <h3 id="1、安装Matsplotlib库："><a href="#1、安装Matsplotlib库：" class="headerlink" title="1、安装Matsplotlib库："></a>1、安装Matsplotlib库：</h3><p>一般的安装指令，用python或者是python3来执行，具体的要求由自己的环境变量所指定的值来决定；</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python3 -m pip install --user matplotlib</span><br></pre></td></tr></table></figure>
 <p>但是这样是直接连接国外的网站，会有相对应的报错信息；所以，如果遇到Warning的类似报错信息可以通过换源的方式来进行解决；</p>
@@ -788,6 +818,11 @@
       
     </div>
     <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
       
 	<div class="article-tag tagcloud">
