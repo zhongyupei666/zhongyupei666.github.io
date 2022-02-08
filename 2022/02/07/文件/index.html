@@ -449,7 +449,33 @@
 
   
 
-
+<!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">1、打开文件：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-1-%E5%AF%B9%E6%AF%94%E2%80%9Dwith-open-%E2%80%98file-url%E2%80%99-as-filename%E2%80%9D%E7%9A%84%E7%94%A8%E6%B3%95-x3D-x3D"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">&#x3D;&#x3D;1)对比”with open(‘file_url’) as filename”的用法:&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-open-%E5%87%BD%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E6%96%87%E4%BB%B6%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">2)open()函数对应的文件模式：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#x3D-x3D-%E8%A7%A3%E9%87%8A%EF%BC%9A-x3D-x3D"><span class="toc-number">1.0.1.0.2.1.</span> <span class="toc-text">&#x3D;&#x3D;解释：&#x3D;&#x3D;</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%96%87%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、文件的基本方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%EF%BC%89%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%EF%BC%9A"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">1）读取和写入：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%EF%BC%89%E4%BD%BF%E7%94%A8%E7%AE%A1%E9%81%93%E9%87%8D%E5%AE%9A%E5%90%91%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">2）使用管道重定向输出：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-3-%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96-x3D-x3D"><span class="toc-number">1.0.2.0.3.</span> <span class="toc-text">&#x3D;&#x3D;3)随机存取:&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E8%A1%8C%EF%BC%9A"><span class="toc-number">1.0.2.0.4.</span> <span class="toc-text">4)读取和写入行：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="toc-number">1.0.2.0.5.</span> <span class="toc-text">5)关闭文件:</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9A"><span class="toc-number">1.0.2.0.5.1.</span> <span class="toc-text">上下文管理器：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E8%BF%AD%E4%BB%A3%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-number">1.0.3.</span> <span class="toc-text">3、迭代文件内容：</span></a></li></ol></li></ol></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
+             
+<!-- 目录内容结束 -->
           </div>
         </div>
       </div>

@@ -438,7 +438,33 @@
 
   
 
-
+<!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matplotlib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">Matplotlib库的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85Matsplotlib%E5%BA%93%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">1、安装Matsplotlib库：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%EF%BC%89%E4%B8%B4%E6%97%B6%EF%BC%9A"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">1）临时：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%EF%BC%89%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">2）默认配置：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#a-%E5%9C%A8linux%E7%B3%BB%E7%BB%9F%E4%B8%AD%EF%BC%9A"><span class="toc-number">1.0.1.0.2.1.</span> <span class="toc-text">a)在linux系统中：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#b-%E5%9C%A8windows%E7%B3%BB%E7%BB%9F%E4%B8%AD%EF%BC%9A"><span class="toc-number">1.0.1.0.2.2.</span> <span class="toc-text">b)在windows系统中：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E7%9A%84%E6%8A%98%E7%BA%BF%E5%9B%BE%EF%BC%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、绘制简单的折线图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E4%BF%AE%E6%94%B9%E6%A0%87%E7%AD%BE%E6%96%87%E5%AD%97%E5%92%8C%E7%BA%BF%E6%9D%A1%E7%B2%97%E7%BB%86%EF%BC%9A"><span class="toc-number">1.0.3.</span> <span class="toc-text">3、修改标签文字和线条粗细：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E6%A0%A1%E6%AD%A3%E5%9B%BE%E5%BD%A2%EF%BC%9A"><span class="toc-number">1.0.4.</span> <span class="toc-text">3、校正图形：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E4%BD%BF%E7%94%A8%E5%86%85%E7%BD%AE%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.0.5.</span> <span class="toc-text">4、使用内置样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E4%BD%BF%E7%94%A8scatter-%E7%BB%98%E5%88%B6%E6%95%A3%E7%82%B9%E5%9B%BE%E5%B9%B6%E8%AE%BE%E7%BD%AE%E6%A0%B7%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.0.6.</span> <span class="toc-text">5、使用scatter()绘制散点图并设置样式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E3%80%81%E4%BD%BF%E7%94%A8scatter-%E6%96%B9%E6%B3%95%E7%BB%98%E5%88%B6%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E7%82%B9%EF%BC%9A"><span class="toc-number">1.0.7.</span> <span class="toc-text">6、使用scatter()方法绘制一系列的点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E3%80%81%E8%87%AA%E5%8A%A8%E8%AE%A1%E7%AE%97%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="toc-number">1.0.8.</span> <span class="toc-text">7、自动计算数据：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A2%9C%E8%89%B2%EF%BC%9A"><span class="toc-number">1.0.9.</span> <span class="toc-text">8、自定义颜色：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E9%80%9A%E8%BF%87%E9%A2%9C%E8%89%B2%E7%9A%84%E8%8B%B1%E6%96%87%E6%9D%A5%E4%BC%A0%E9%80%92%E8%89%B2%E5%BD%A9%EF%BC%9A"><span class="toc-number">1.0.9.0.1.</span> <span class="toc-text">1)通过颜色的英文来传递色彩：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E9%80%9A%E8%BF%87RGB%E9%A2%9C%E8%89%B2%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="toc-number">1.0.9.0.2.</span> <span class="toc-text">2)通过RGB颜色自定义模块：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9%E3%80%81%E4%BD%BF%E7%94%A8%E9%A2%9C%E8%89%B2%E6%98%A0%E5%B0%84%EF%BC%9A"><span class="toc-number">1.0.10.</span> <span class="toc-text">9、使用颜色映射：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10%E3%80%81%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87%EF%BC%9A"><span class="toc-number">1.0.11.</span> <span class="toc-text">10、自动保存图片：</span></a></li></ol></li></ol></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
+             
+<!-- 目录内容结束 -->
           </div>
         </div>
       </div>
