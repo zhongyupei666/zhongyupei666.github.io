@@ -164,6 +164,153 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-开始" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/14/%E5%BC%80%E5%A7%8B/">开始</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/14/%E5%BC%80%E5%A7%8B/" class="archive-article-date">
+  	<time datetime="2022-02-14T07:13:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>操作系统通过调用main()函数来运行C++程序</p>
+<hr>
+<p>[TOC]</p>
+<h3 id="1、编写一个简单的C-程序"><a href="#1、编写一个简单的C-程序" class="headerlink" title="1、编写一个简单的C++程序"></a>1、编写一个简单的C++程序</h3><ul>
+<li>函数的定义：(包括四个部分)<ol>
+<li>返回类型(return type)</li>
+<li>函数名(function name)</li>
+<li>一个括号包围的形参列表(parameter list)</li>
+<li>函数体(function body)<br>main()函数在某种程度上是比较特殊的，但是他的定义与其他的函数是一致的；<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+这个语句块中唯一的一条语句是return,它结束函数的执行。在本例中，return还会向调用者返回一个值；</li>
+</ol>
+</li>
+</ul>
+<p><strong>当return语句包括一个值时，此返回值的类型必须与函数的返回类型相容</strong><br>【注意】：return 语句后面的分号。在C++中，大多数C++语句以分号结尾表示结束。它们很容易被忽略，但是如果忘记写分号，就会导致莫名奇妙的编译错误。<br><strong>重要概念：类型</strong><br>类型是程序设计的最基本的概念之一，在本书中会反复的遇到他，一种类型不仅定义了元素数据的内容，还定义了这类数据上可以进行的运算。</p>
+<h3 id="2、编译、运行程序"><a href="#2、编译、运行程序" class="headerlink" title="2、编译、运行程序"></a>2、编译、运行程序</h3><p>编写好的程序，就需要去编译他。如何编译程序依赖于你使用的操作系统和编译器。<br>在unix和windows系统中,都可以通过echo命令获得其返回值。在unix系统中，可以通过如下的命令:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> $?</span></span><br></pre></td></tr></table></figure>
+<p>在windows系统中可以输入:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> %ERRORLEVEL%</span></span><br></pre></td></tr></table></figure>
+<p>g++最常用的编译器：<br>使用的指令是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> g++ -o prog1 prog1.cc</span></span><br></pre></td></tr></table></figure>
+<p>-o prog1 是编译器参数，指定最后生成的可执行文件的文件名，这里注意，它代表的是最后编译器生成的是可执行文件的文件名；<br>如果省略了这一步骤，就会自动生成一个<code>.out</code>的可执行文件,而在windows中就会生成一个名为<code>.exe</code>的可执行文件<br><strong>练习题</strong><br>改写程序，让他返回-1。返回值-1通常被当作程序错误的标识。重新编译并运行你的程序，观察你的系统如何处理main返回的错误标识；<br>C++的源代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>后面的编译加上运行过程省略，最终，通过<code>$ echo $?</code>得到最终的返回值，是255；(和操作系统有关系)<br>在看 return 0的时候,用<code>echo $?</code>捕捉到的结果就是0；</p>
+<p>&#x3D;&#x3D;小疑惑：&#x3D;&#x3D;<br>如果一开始main()函数的定义不是用int来定义会发生什么情况？(保持疑惑！！！)</p>
+<h3 id="3、初识输入输出"><a href="#3、初识输入输出" class="headerlink" title="3、初识输入输出"></a>3、初识输入输出</h3><p>C++并未定义任何的输入输出(IO)语句，取而代之的，包含了一个全面的标准库来提供IO机制—–iostream;<br>iostream 库包含了两个基础类型就是istream和ostream,分别表示输入流和输出流。一个<strong>流</strong>就是一个字符序列</p>
+<ul>
+<li>标准库定义了四个IO对象<ol>
+<li>cin:标准输入</li>
+<li>cout:标准输出</li>
+<li>cerr:标准错误</li>
+<li>clog:输出程序运行时的一般性的信息<br>系统通常将程序所运行的窗口与这些对象关联起来。因此，当我们读取cin，数据将从程序正在运行的窗口读入；<br>体现以下，下面的代码:<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Enter two numbers:&quot;</span> &lt;&lt; std::end1;</span><br><span class="line">    <span class="keyword">int</span> v1 = <span class="number">0</span>,v2 = <span class="number">0</span>;</span><br><span class="line">    std::cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;The sum of &quot;</span> &lt;&lt; v1 &lt;&lt; <span class="string">&quot; and &quot;</span> &lt;&lt; v2 &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; v1+v2 &lt;&lt;std::end1;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+等到<code>Enter two numbers:</code>出来之后，等待用户的输入<code>3 7</code>然后键入一个回车，则程序产生如下的输出：<br>最后的输出结果是:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The sum of 3 and 7 is 10</span><br></pre></td></tr></table></figure>
+<h5 id="向流写入数据"><a href="#向流写入数据" class="headerlink" title="向流写入数据"></a>向流写入数据</h5>main()函数体的第一条语句执行了一个表达式(expression)。在C++中，一个表达式产生一个计算结果，他由一个或多个运算对象和一个运算符组成。这条语句中的表达式使用了<strong>输出运算符(&lt;&lt;)</strong> 在标准输出上打印消息：<br><code>std::cout &lt;&lt; &quot;Enter two numbers: &quot; &lt;&lt; std::endl</code></li>
+</ol>
+</li>
+</ul>
+<p><code>&lt;&lt;</code> 运算符接受两个运算对象，左侧的对象必须是ostream对象，右侧的运算对象是要打印的值。因此运算符返回其左侧的运算对象，因此第一个运算符的结果成为了第二个运算符的左侧运算对象。</p>
+<p><code>std::cout &lt;&lt; &quot;Enter two numbers:&quot; &lt;&lt; std::endl</code></p>
+<p>上述的这个形式称为是链式；<br>链中每个运算符的左侧运算对象都是相同的，在本例中是<code>std::cout</code>。我们也可以用两条语句生成相同的输出:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::cout &lt;&lt; <span class="string">&quot;Enter two numbers&quot;</span>;</span><br><span class="line">std::cout &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<p><em><strong>重要的特点：</strong></em><br>写入endl的效果是结束当前行，并将与设备关联的缓冲区（buffer）中的内容刷到设备中。缓冲刷新操作可以保证到目前为止程序所产生的所有输出都真正写入输出流中，而不是仅停留在内存中等待写入流。<br>前缀<code>std::</code>指出名字cout和endl是定义在名为<strong>std的命名空间</strong>(namespace)，命名空间可以帮助我们避免不经意的名字定义冲突，以及使用库中相同名字导致的冲突。标准库定义的所有的名字都在命名空间std中。<br>【附】:通过命名空间使用标准库有一个副作用：<br>当时用标准库中的一个名字时，必须有显示的说明我们想使用来自命名空间std中的名字。例如，需要写出std::out，通过使用<strong>作用域运算符(：：)</strong> 来指出我们向使用定义在命名空间std中的名字cout。<br><strong>从流读取数据</strong><br>用户数据的输入过程，两个变量名为v1和v2的变量。来保存输入：<br><code>int v1 = 0,v2 = 0;</code><br>我们将这两个变量定义为int类型，int是一种内置类型，用来表示整数。这里是将他们初始化为0。初始化一个变量，就是在变量创建的同时为它赋予一个值；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::cin &gt;&gt; v1 &gt;&gt; v2;</span><br></pre></td></tr></table></figure>
+<p><strong>输入运算符</strong> 他接受一个istream作为其左侧运算对象，接受一个对象作为其右侧运算对象。它给从指定的istream读入数据，并存入给定的对象中。上式子等价于：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(std::cin &gt;&gt; v1) &gt;&gt; v2;</span><br></pre></td></tr></table></figure>
+<p>或者等价于：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::cin &gt;&gt; v1;</span><br><span class="line">std::cin &gt;&gt; v2;</span><br></pre></td></tr></table></figure>
+<h3 id="3、注释简介"><a href="#3、注释简介" class="headerlink" title="3、注释简介"></a>3、注释简介</h3><ul>
+<li>C++中有两种注释：<ol>
+<li><strong>单行注释:</strong> 单行注释以双斜线（&#x2F;&#x2F;）开始，以换行符结束。当前行双斜线右侧的所有内容都会被编译器忽略，这种注释可以包含任何文本，包括额外的双斜线。</li>
+<li><strong>界定符对注释:</strong> 这种注释以&#x2F;* 开始，以*&#x2F;结束，可以包含除*&#x2F; 外的任意内容，包括换行符。编译器将落在&#x2F;* 和*&#x2F;之间的所有内容都当作注释。</li>
+</ol>
+</li>
+</ul>
+<p><strong>注释界定符不能嵌套:</strong><br>界定符对形式的注释是以&#x2F;* 开始，以 *&#x2F;结束的。因此，一个注释不能嵌套在另一个注释之内。编译器对这类问题所给出的错误信息可能是难以理解、令人迷惑的。</p>
+<h3 id="4、控制流"><a href="#4、控制流" class="headerlink" title="4、控制流"></a>4、控制流</h3><ul>
+<li>控制流<br>  1.while循环<br>  2.for循环<br>  3.if判断<h5 id="1、while循环："><a href="#1、while循环：" class="headerlink" title="1、while循环："></a>1、while循环：</h5>语句的形式：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition)</span><br><span class="line">    statement</span><br></pre></td></tr></table></figure>
+<h5 id="2、for循环："><a href="#2、for循环：" class="headerlink" title="2、for循环："></a>2、for循环：</h5>（用来简化while循环的机制:）<br>每个for循环都包含两个部分：循环头和循环体</li>
+<li><em>循环头</em>：控制循环体的执行次数；<br>  1.初始化语句<br>  2.循环条件<br>  3.表达式</li>
+</ul>
+<h5 id="3-if语句："><a href="#3-if语句：" class="headerlink" title="3.if语句："></a>3.if语句：</h5><p>if语句来支持条件执行；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition)</span><br><span class="line">    &#123;</span><br><span class="line">        statements;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title=".运算符"></a>.运算符</h3><p>.运算符（.operator）点运算符。左侧运算对象必须是一个类类型对象，右侧运算对象必须是此对象的一个成员的名字。运算结果即为该对象的这个成员。</p>
+
+      
+        
+
+  <div class="declare" hidden="hidden"></div>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/14/%E5%BC%80%E5%A7%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+<!-- 目录内容 -->
+             
+<!-- 目录内容结束 -->
+  
     <article id="post-文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1115,6 +1262,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">python-数据可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
