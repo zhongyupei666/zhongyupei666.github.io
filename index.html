@@ -202,8 +202,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h2 id="一-基础应用"><a class="markdownIt-Anchor" href="#一-基础应用"></a> 一、基础应用:</h2>
+        <h2 id="一-基础应用"><a class="markdownIt-Anchor" href="#一-基础应用"></a> 一、基础应用:</h2>
 <h4 id="1-段落"><a class="markdownIt-Anchor" href="#1-段落"></a> 1、段落</h4>
 <p>Markdown 段落没有特殊的格式，直接编写文字就好，段落的换行是使用两个以上空格加上回车。</p>
 <h4 id="2-字体"><a class="markdownIt-Anchor" href="#2-字体"></a> 2、字体</h4>
@@ -882,116 +881,39 @@ a_3x+b_3y+c_3z=d_3\\
 3.甘特图</p>
 <h4 id="1-画流程图"><a class="markdownIt-Anchor" href="#1-画流程图"></a> 1、画流程图</h4>
 <ol>
-<li>横向流程图源代码格式:<br />
-```mermaid<br />
-graph LR<br />
-A[方形] --&gt; B(圆角)<br />
-B --&gt; C{条件a}<br />
-C --&gt;|a=1| D[结果1]<br />
-C --&gt;|a=2| E[结果2]<br />
-F[横向流程图]<br />
-```</li>
+<li>横向流程图源代码格式:</li>
 </ol>
 <p>显示的效果如下:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[方形] --&gt; B(圆角)</span><br><span class="line">B --&gt; C&#123;条件a&#125;</span><br><span class="line">C --&gt;|a=1| D[结果1]</span><br><span class="line">C --&gt;|a=2| E[结果2]</span><br><span class="line">F[横向流程图]</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>竖向流程图源码格式:<br />
-```mermaid<br />
-graph TD<br />
-A[方形] --&gt; B(圆角)<br />
-B --&gt; C{条件a}<br />
-C --&gt; |a=1| D[结果1]<br />
-C --&gt; |a=2| E[结果2]<br />
-F[竖向流程图]<br />
-```<br />
-显示的代码如下:</li>
+<li>竖向流程图源码格式:</li>
 </ol>
+<p>显示的代码如下:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[方形] --&gt; B(圆角)</span><br><span class="line">B --&gt; C&#123;条件a&#125;</span><br><span class="line">C --&gt; |a=1| D[结果1]</span><br><span class="line">C --&gt; |a=2| E[结果2]</span><br><span class="line">F[竖向流程图]</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>标准流程图源码格式：<br />
-```flow<br />
-st=&gt;start: 开始框<br />
-op=&gt;operation: 处理框<br />
-cond=&gt;condition: 判断框(是或否?)<br />
-sub1=&gt;subroutine: 子流程<br />
-io=&gt;inputoutput: 输入输出框<br />
-e=&gt;end: 结束框<br />
-st-&gt;op-&gt;cond<br />
-cond(yes)-&gt;io-&gt;e<br />
-cond(no)-&gt;sub1(right)-&gt;op<br />
-```<br />
-显示的效果如下:</li>
+<li>标准流程图源码格式：</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始框</span><br><span class="line">op=&gt;operation: 处理框</span><br><span class="line">cond=&gt;condition: 判断框(是或否?)</span><br><span class="line">sub1=&gt;subroutine: 子流程</span><br><span class="line">io=&gt;inputoutput: 输入输出框</span><br><span class="line">e=&gt;end: 结束框</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;io-&gt;e</span><br><span class="line">cond(no)-&gt;sub1(right)-&gt;op</span><br></pre></td></tr></table></figure>
 <ol start="4">
-<li>标准流程图源码格式（横向）：<br />
-```flow<br />
-st=&gt;start: 开始框<br />
-op=&gt;operation: 处理框<br />
-cond=&gt;condition: 判断框(是或否?)<br />
-sub1=&gt;subroutine: 子流程<br />
-io=&gt;inputoutput: 输入输出框<br />
-e=&gt;end: 结束框<br />
-st(right)-&gt;op(right)-&gt;cond<br />
-cond(yes)-&gt;io(bottom)-&gt;e<br />
-cond(no)-&gt;sub1(right)-&gt;op<br />
-```<br />
-显示的效果如下:</li>
+<li>标准流程图源码格式（横向）：</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始框</span><br><span class="line">op=&gt;operation: 处理框</span><br><span class="line">cond=&gt;condition: 判断框(是或否?)</span><br><span class="line">sub1=&gt;subroutine: 子流程</span><br><span class="line">io=&gt;inputoutput: 输入输出框</span><br><span class="line">e=&gt;end: 结束框</span><br><span class="line">st(right)-&gt;op(right)-&gt;cond</span><br><span class="line">cond(yes)-&gt;io(bottom)-&gt;e</span><br><span class="line">cond(no)-&gt;sub1(right)-&gt;op</span><br></pre></td></tr></table></figure>
 <h4 id="2-uml时序图源码样例"><a class="markdownIt-Anchor" href="#2-uml时序图源码样例"></a> 2、(UML)时序图源码样例:</h4>
 <ol>
-<li>UML时序图源码复杂样例:<br />
-```sequence<br />
-对象A-&gt;对象B: 对象B你好吗?（请求）<br />
-Note right of 对象B: 对象B的描述<br />
-Note left of 对象A: 对象A的描述(提示)<br />
-对象B–&gt;对象A: 我很好(响应)<br />
-对象A-&gt;对象B: 你真的好吗？<br />
-```<br />
-样例的展示:</li>
+<li>UML时序图源码复杂样例:</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">对象A-&gt;对象B: 对象B你好吗?（请求）</span><br><span class="line">Note right of 对象B: 对象B的描述</span><br><span class="line">Note left of 对象A: 对象A的描述(提示)</span><br><span class="line">对象B--&gt;对象A: 我很好(响应)</span><br><span class="line">对象A-&gt;对象B: 你真的好吗？</span><br></pre></td></tr></table></figure>
-<p><mark>2. UML时序图源码复杂样例：</mark><br />
-```sequence<br />
-Title: 标题：复杂使用<br />
-对象A-&gt;对象B: 对象B你好吗?（请求）<br />
-Note right of 对象B: 对象B的描述<br />
-Note left of 对象A: 对象A的描述(提示)<br />
-对象B–&gt;对象A: 我很好(响应)<br />
-对象B-&gt;小三: 你好吗<br />
-小三–&gt;&gt;对象A: 对象B找我了<br />
-对象A-&gt;对象B: 你真的好吗？<br />
-Note over 小三,对象B: 我们是朋友<br />
-participant C<br />
-Note right of C: 没人陪我玩<br />
-```</p>
+<p><mark>2. UML时序图源码复杂样例：</mark></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Title: 标题：复杂使用</span><br><span class="line">对象A-&gt;对象B: 对象B你好吗?（请求）</span><br><span class="line">Note right of 对象B: 对象B的描述</span><br><span class="line">Note left of 对象A: 对象A的描述(提示)</span><br><span class="line">对象B--&gt;对象A: 我很好(响应)</span><br><span class="line">对象B-&gt;小三: 你好吗</span><br><span class="line">小三--&gt;&gt;对象A: 对象B找我了</span><br><span class="line">对象A-&gt;对象B: 你真的好吗？</span><br><span class="line">Note over 小三,对象B: 我们是朋友</span><br><span class="line">participant C</span><br><span class="line">Note right of C: 没人陪我玩</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>UML标准时序图样例：<br />
-```mermaid<br />
-%% 时序图例子,-&gt; 直线，–&gt;虚线，-&gt;&gt;实线箭头<br />
-sequenceDiagram<br />
-participant 张三<br />
-participant 李四<br />
-张三-&gt;王五: 王五你好吗？<br />
-loop 健康检查<br />
-王五-&gt;王五: 与疾病战斗<br />
-end<br />
-Note right of 王五: 合理 食物 <br/>看医生…<br />
-李四–&gt;&gt;张三: 很好!<br />
-王五-&gt;李四: 你怎么样?<br />
-李四–&gt;王五: 很好!<br />
-```<br />
-显示的效果如下:</li>
+<li>UML标准时序图样例：</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">%% 时序图例子,-&gt; 直线，--&gt;虚线，-&gt;&gt;实线箭头</span><br><span class="line">  sequenceDiagram</span><br><span class="line">    participant 张三</span><br><span class="line">    participant 李四</span><br><span class="line">    张三-&gt;王五: 王五你好吗？</span><br><span class="line">    loop 健康检查</span><br><span class="line">        王五-&gt;王五: 与疾病战斗</span><br><span class="line">    end</span><br><span class="line">    Note right of 王五: 合理 食物 &lt;br/&gt;看医生...</span><br><span class="line">    李四--&gt;&gt;张三: 很好!</span><br><span class="line">    王五-&gt;李四: 你怎么样?</span><br><span class="line">    李四--&gt;王五: 很好!</span><br></pre></td></tr></table></figure>
 <h3 id="3-甘特图"><a class="markdownIt-Anchor" href="#3-甘特图"></a> 3、甘特图</h3>
 <blockquote>
 <p>甘特图样例：</p>
 </blockquote>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```mermaid</span></span><br><span class="line"><span class="code">    gantt</span></span><br><span class="line"><span class="code">    dateFormat  YYYY-MM-DD</span></span><br><span class="line"><span class="code">    title 软件开发甘特图</span></span><br><span class="line"><span class="code">    section 设计</span></span><br><span class="line"><span class="code">    需求                      :done,    des1, 2014-01-06,2014-01-08</span></span><br><span class="line"><span class="code">    原型                      :active,  des2, 2014-01-09, 3d</span></span><br><span class="line"><span class="code">    UI设计                     :         des3, after des2, 5d</span></span><br><span class="line"><span class="code">    未来任务                     :         des4, after des3, 5d</span></span><br><span class="line"><span class="code">    section 开发</span></span><br><span class="line"><span class="code">    学习准备理解需求                      :crit, done, 2014-01-06,24h</span></span><br><span class="line"><span class="code">    设计框架                             :crit, done, after des2, 2d</span></span><br><span class="line"><span class="code">    开发                                 :crit, active, 3d</span></span><br><span class="line"><span class="code">    未来任务                              :crit, 5d</span></span><br><span class="line"><span class="code">    耍                                   :2d</span></span><br><span class="line"><span class="code">    section 测试</span></span><br><span class="line"><span class="code">    功能测试                              :active, a1, after des3, 3d</span></span><br><span class="line"><span class="code">    压力测试                               :after a1  , 20h</span></span><br><span class="line"><span class="code">    测试报告                               : 48h</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">显示的效果如下：</span><br><span class="line"></span><br><span class="line">```mermaid</span><br><span class="line">        gantt</span><br><span class="line">        dateFormat  YYYY-MM-DD</span><br><span class="line">        title 软件开发甘特图</span><br><span class="line">        section 设计</span><br><span class="line">        需求                      :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">        原型                      :active,  des2, 2014-01-09, 3d</span><br><span class="line">        UI设计                     :         des3, after des2, 5d</span><br><span class="line">    未来任务                     :         des4, after des3, 5d</span><br><span class="line">        section 开发</span><br><span class="line">        学习准备理解需求                      :crit, done, 2014-01-06,24h</span><br><span class="line">        设计框架                             :crit, done, after des2, 2d</span><br><span class="line">        开发                                 :crit, active, 3d</span><br><span class="line">        未来任务                              :crit, 5d</span><br><span class="line">        耍                                   :2d</span><br><span class="line">        section 测试</span><br><span class="line">        功能测试                              :active, a1, after des3, 3d</span><br><span class="line">        压力测试                               :after a1  , 20h</span><br><span class="line">        测试报告                               : 48h</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">dateFormat  YYYY-MM-DD</span><br><span class="line">title 软件开发甘特图</span><br><span class="line">section 设计</span><br><span class="line">需求                      :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">原型                      :active,  des2, 2014-01-09, 3d</span><br><span class="line">UI设计                     :         des3, after des2, 5d</span><br><span class="line">未来任务                     :         des4, after des3, 5d</span><br><span class="line">section 开发</span><br><span class="line">学习准备理解需求                      :crit, done, 2014-01-06,24h</span><br><span class="line">设计框架                             :crit, done, after des2, 2d</span><br><span class="line">开发                                 :crit, active, 3d</span><br><span class="line">未来任务                              :crit, 5d</span><br><span class="line">耍                                   :2d</span><br><span class="line">section 测试</span><br><span class="line">功能测试                              :active, a1, after des3, 3d</span><br><span class="line">压力测试                               :after a1  , 20h</span><br><span class="line">测试报告                               : 48h</span><br></pre></td></tr></table></figure>
 
       
         
@@ -2705,11 +2627,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color4">python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">python基础</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
