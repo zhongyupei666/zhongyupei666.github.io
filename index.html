@@ -97,7 +97,7 @@
 					<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
-			已写文章总数:22
+			已写文章总数:23
 			
 				<div style="position:absolute; bottom: -400px; left: -40px; width:70%">
 					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=280 src="//music.163.com/outchain/player?type=0&id=5172410111&auto=1&height=430"></iframe>
@@ -180,6 +180,135 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-判断是否是二叉搜索树-leetcode题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/22/%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91-leetcode%E9%A2%98/">判断是否是二叉搜索树(leetcode题)</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/22/%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91-leetcode%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2022-11-22T08:12:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="判断是否是二叉搜索树"><a class="markdownIt-Anchor" href="#判断是否是二叉搜索树"></a> 判断是否是二叉搜索树</h1>
+<h3 id="第一个思路"><a class="markdownIt-Anchor" href="#第一个思路"></a> 第一个思路:</h3>
+<blockquote>
+<p>解题思路:</p>
+<p>首先使用二叉树的中序遍历，将对应的遍历得到的数据存储到一个数组中;我们在通过迭代，来判定这个数组是否是一个递增的数组即可;</p>
+</blockquote>
+<p>这里不写对应的测试的main()驱动函数，先给出对应的上述思路的代码:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TreeCount</span><span class="params">(<span class="keyword">int</span> *counts,struct TreeNode* root)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">midTraverse</span><span class="params">(<span class="keyword">int</span> *nums,struct TreeNode* root,<span class="keyword">int</span> *count)</span></span>;       </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isValidBST</span><span class="params">(struct TreeNode* root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> counts=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    TreeCount(&amp;counts,root);</span><br><span class="line">    <span class="keyword">int</span> nums[counts];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;counts;i++)</span><br><span class="line">        nums[i] = <span class="number">0</span>;</span><br><span class="line">    midTraverse(nums,root,&amp;count);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;counts<span class="number">-1</span>;i++)</span><br><span class="line">        <span class="keyword">if</span>(nums[i]&gt;=nums[i+<span class="number">1</span>])</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TreeCount</span><span class="params">(<span class="keyword">int</span> *counts,struct TreeNode* root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    (*counts)++;</span><br><span class="line">    TreeCount(counts,root-&gt;left);</span><br><span class="line">    TreeCount(counts,root-&gt;right);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">midTraverse</span><span class="params">(<span class="keyword">int</span> *nums,struct TreeNode* root,<span class="keyword">int</span> *count)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    midTraverse(nums,root-&gt;left,count);</span><br><span class="line">    nums[(*count)++] = root-&gt;val;</span><br><span class="line">    midTraverse(nums,root-&gt;right,count);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>没错，这里的这道题目的思路是非常的清晰的，我们首先使用一个TreeCount()函数来计算这棵树中存在多少的结点;所以他的功能就是用来统计结点数;<br />
+这里统计结点数的目的是为了能够节约更多的内存空间;来创建一个中序遍历后的数组;我们需要通过对这个中序遍历后的数组进行分析;看它是否是递增的,近而判断对应的树是否是二叉搜索树(BST);<br />
+这里存在的唯一的难点就是,我们对于C语言基础语法的使用, 后面,我会加大对这个方面的笔记的整理和训练;(这些都是后话了)<br />
+上面的两个基本的函数模块，按照戴老师的说法建议直接背诵;没错，有一定的基础代码的积累,能够更加的方便我们快速的出思路;</p>
+<p>这个思路解决后的leetcode截图:<br />
+<img src = "../images/树/BST.png" ></p>
+<h3 id="下面就是介绍我的第二个思路"><a class="markdownIt-Anchor" href="#下面就是介绍我的第二个思路"></a> 下面就是介绍我的第二个思路:</h3>
+<blockquote>
+<p>这里的这个思路是没有经过leetcode的测试，不过确实也是有问题的;简单的描述便是:<br />
+<mark>一颗二叉搜索树他的子树也一定是二叉搜索树;</mark><br />
+但是，我现在发现,我们如果通过结论来确定条件，无法完全的进行判定，就是说；子树是二叉搜索树的树,经过结合的操作,最后得到的树不一定是二叉搜索树;也就是说这个条件很充分，但是不是充要的条件;</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">二</mi><mi mathvariant="normal">叉</mi><mi mathvariant="normal">搜</mi><mi mathvariant="normal">索</mi><mi mathvariant="normal">树</mi><mo stretchy="false">(</mo><mi>B</mi><mi>S</mi><mi>T</mi><mo stretchy="false">)</mo><mo>=</mo><mo>&gt;</mo><mi mathvariant="normal">该</mi><mi mathvariant="normal">二</mi><mi mathvariant="normal">叉</mi><mi mathvariant="normal">搜</mi><mi mathvariant="normal">索</mi><mi mathvariant="normal">树</mi><mi mathvariant="normal">对</mi><mi mathvariant="normal">应</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">子</mi><mi mathvariant="normal">树</mi><mi mathvariant="normal">也</mi><mi mathvariant="normal">是</mi><mi mathvariant="normal">二</mi><mi mathvariant="normal">叉</mi><mi mathvariant="normal">搜</mi><mi mathvariant="normal">索</mi><mi mathvariant="normal">树</mi></mrow><annotation encoding="application/x-tex">二叉搜索树(BST) =&gt; 该二叉搜索树对应的子树也是二叉搜索树</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">二</span><span class="mord cjk_fallback">叉</span><span class="mord cjk_fallback">搜</span><span class="mord cjk_fallback">索</span><span class="mord cjk_fallback">树</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">该</span><span class="mord cjk_fallback">二</span><span class="mord cjk_fallback">叉</span><span class="mord cjk_fallback">搜</span><span class="mord cjk_fallback">索</span><span class="mord cjk_fallback">树</span><span class="mord cjk_fallback">对</span><span class="mord cjk_fallback">应</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">子</span><span class="mord cjk_fallback">树</span><span class="mord cjk_fallback">也</span><span class="mord cjk_fallback">是</span><span class="mord cjk_fallback">二</span><span class="mord cjk_fallback">叉</span><span class="mord cjk_fallback">搜</span><span class="mord cjk_fallback">索</span><span class="mord cjk_fallback">树</span></span></span></span></p>
+</blockquote>
+<p>这个思路下只需要一个递归即可，只要可以找到这个子树和结点之间的充要条件，便可以完美的使用一次递归;希望看到这个帖子的朋友能够按照这个思路提供一些解决的方案.</p>
+
+      
+        
+
+  <div class="declare" hidden="hidden"></div>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言/编程//" class="article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/22/%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91-leetcode%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+<!-- 目录内容 -->
+             
+<!-- 目录内容结束 -->
   
     <article id="post-线性表的链式存储" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1115,130 +1244,6 @@
              
 <!-- 目录内容结束 -->
   
-    <article id="post-1、数值类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/03/1%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/">数值类型</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/03/1%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2022-05-03T07:33:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-03</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="引言"><a class="markdownIt-Anchor" href="#引言"></a> 引言：</h3>
-<p>数据的分类：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>整数类型</strong></th>
-<th style="text-align:center">浮点类型</th>
-<th style="text-align:center">布尔类型</th>
-<th style="text-align:center">复数类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">int</td>
-<td style="text-align:center">float</td>
-<td style="text-align:center">bool</td>
-<td style="text-align:center">complex</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">6.6</td>
-<td style="text-align:center">True/False</td>
-<td style="text-align:center">a+bj/a+bJ</td>
-</tr>
-</tbody>
-</table>
-<p>Python中的type( )函数可以用来检测数据的类型；</p>
-        
-          <a class="article-more-a" href="/2022/05/03/1%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/#more">more >></a>
-        
-      
-        
-
-  <div class="declare" hidden="hidden"></div>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/03/1%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-<!-- 目录内容结束 -->
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1427,7 +1432,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">激光原理</a>
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1435,7 +1444,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">激光原理</a>
               </li>
              
               <li class="article-tag-list-item">
