@@ -99,7 +99,7 @@
 					<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
-			已写文章总数:23
+			已写文章总数:24
 			
 				<div style="position:absolute; bottom: -400px; left: -40px; width:70%">
 					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=280 src="//music.163.com/outchain/player?type=0&id=5172410111&auto=1&height=430"></iframe>
@@ -186,6 +186,112 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-csv文件格式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/">csv文件格式</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2022-02-03T07:05:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-03</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要在文本文件中存储数据，一个简单方式是将数据作为一系列以逗号分隔的值 （comma-separated values）写入文件。这样的文件称为 CSV 文件</p>
+<hr />
+<h3 id="1-分析csv文件头"><a class="markdownIt-Anchor" href="#1-分析csv文件头"></a> 1、分析CSV文件头</h3>
+<p>通过导入对应的csv模块，来打开对应的csv文件和读取里面的数据：<br />
+对应的<br />
+<em><strong><a target="_blank" rel="noopener" href="http://csvmodel.py">csvmodel.py</a></strong></em> 代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># 把文件的路径传给变量；</span></span><br><span class="line">file_url = <span class="string">&#x27;./XXXXX.csv&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开这个文件，并将返回的文件对象赋给f</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(fire_url) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;调用csv.reader()并将前面存储的文件对象作为实参传递给它&quot;&quot;&quot;</span></span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    <span class="comment"># 模块csv包含函数next()，调用它并传入阅读器对象时，它将返回文件中的下一行,并将值返回给变量；</span></span><br><span class="line">    head_read = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="comment"># 输出变量里面的值；</span></span><br><span class="line">    <span class="built_in">print</span>(head_read)</span><br></pre></td></tr></table></figure>
+<p>最后的代码的输出是列表的形式：<br />
+[‘STATION’, ‘NAME’, ‘DATE’, ‘PRCP’, ‘TAVG’, ‘TMAX’, ‘TMIN’]</p>
+        
+          <a class="article-more-a" href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/#more">more >></a>
+        
+      
+        
+
+  <div class="declare" hidden="hidden"></div>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">python-数据可视化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+<!-- 目录内容 -->
+             
+<!-- 目录内容结束 -->
   
     <article id="post-使用plotly模拟掷骰子-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -686,14 +792,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">傅里叶分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数学分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
@@ -702,11 +800,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">激光原理</a>
+                <a href="javascript:void(0)" class="js-tag color1">傅里叶分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数学分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数字图像处理</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">激光原理</a>
               </li>
              
               <li class="article-tag-list-item">
