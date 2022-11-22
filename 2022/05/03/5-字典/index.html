@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>字典 | JiaFeng的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、字典是什么 字典dict：除列表以外，python中最灵活的数据类型 字典同样可以用来存储多个数据：通常用于描述一个物体 的相关信息">
+  <meta name="description" content="1、字典是什么字典dict：除列表以外，python中最灵活的数据类型 字典同样可以用来存储多个数据：通常用于描述一个物体 的相关信息">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字典">
 <meta property="og:url" content="http://example.com/2022/05/03/5-%E5%AD%97%E5%85%B8/index.html">
 <meta property="og:site_name" content="JiaFeng的博客">
-<meta property="og:description" content="1、字典是什么 字典dict：除列表以外，python中最灵活的数据类型 字典同样可以用来存储多个数据：通常用于描述一个物体 的相关信息">
+<meta property="og:description" content="1、字典是什么字典dict：除列表以外，python中最灵活的数据类型 字典同样可以用来存储多个数据：通常用于描述一个物体 的相关信息">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-05-03T07:41:58.000Z">
 <meta property="article:modified_time" content="2022-10-14T10:31:01.911Z">
@@ -72,8 +72,6 @@
 				<li><a href="/InternerDefence">网络安全</a></li>
 	        
 				<li><a href="/categories">分类</a></li>
-	        
-				<li><a target="_blank" rel="noopener" href="https://JiaFengTreasure.github.io">我的小邹</a></li>
 	        
 			</ul>
 		</nav>
@@ -143,8 +141,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -165,17 +161,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/ImageHandle">图像处理</a></li>
+					<li style="width: 20%"><a href="/ImageHandle">图像处理</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/DataStruct">数据结构</a></li>
+					<li style="width: 20%"><a href="/DataStruct">数据结构</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/InternerDefence">网络安全</a></li>
+					<li style="width: 20%"><a href="/InternerDefence">网络安全</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
-		        
-					<li style="width: 16.666666666666668%"><a target="_blank" rel="noopener" href="https://JiaFengTreasure.github.io">我的小邹</a></li>
+					<li style="width: 20%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -215,44 +209,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-字典是什么"><a class="markdownIt-Anchor" href="#1-字典是什么"></a> 1、字典是什么</h3>
-<p>字典dict：除列表以外，python中最灵活的数据类型</p>
+        <h3 id="1、字典是什么"><a href="#1、字典是什么" class="headerlink" title="1、字典是什么"></a>1、字典是什么</h3><p>字典dict：除列表以外，python中最灵活的数据类型</p>
 <p>字典同样可以用来存储多个数据：通常用于描述一个物体 的相关信息</p>
 <span id="more"></span>
-<h3 id="2-字典的特点"><a class="markdownIt-Anchor" href="#2-字典的特点"></a> 2、字典的特点</h3>
-<ul>
+<h3 id="2、字典的特点"><a href="#2、字典的特点" class="headerlink" title="2、字典的特点"></a>2、字典的特点</h3><ul>
 <li>字典的键是唯一的，不可以重复；值可以重复</li>
-<li>字典用{}定义，字典使用 <mark>键值对</mark> 存储数据，键值对之间是用逗号分隔</li>
+<li>字典用{}定义，字典使用 ==键值对== 存储数据，键值对之间是用逗号分隔</li>
 <li>通过‘键’来访问对应的值</li>
 <li>访问不存在的键就会报错 ————&gt; get( )方法</li>
 </ul>
 <p>get( )方法，防止访问字典中不存在的键值对报错的情况；</p>
 <p>如果你不确定字典里面存不存在这个键的时候就可以用get方法，get( )方法将会返回一个None; 如果，在get()中添加别的参数，将会返回对应参数中的内容；实例代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(dic.get(<span class="string">&#x27;name&#x27;</span>))  <span class="comment"># ziyi  不存在会输出None</span></span><br><span class="line"><span class="built_in">print</span>(dic.get(<span class="string">&#x27;aaaa&#x27;</span>, <span class="string">&#x27;不存在&#x27;</span>))  <span class="comment"># 不存在</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-字典中的增删改查"><a class="markdownIt-Anchor" href="#3-字典中的增删改查"></a> 3、字典中的增删改查</h3>
-<h5 id="1-检测字典中的元素"><a class="markdownIt-Anchor" href="#1-检测字典中的元素"></a> 1、检测字典中的元素</h5>
-<p>字典依然需要通过[]来访问，但是[]中所需要的不是下标；而是字典中的的键，通过键来来访问对应的值；</p>
-<h5 id="2-修改字典中的元素"><a class="markdownIt-Anchor" href="#2-修改字典中的元素"></a> 2、修改字典中的元素</h5>
-<p><mark>公式：变量名[‘键’] = 数据</mark></p>
+<h3 id="3、字典中的增删改查"><a href="#3、字典中的增删改查" class="headerlink" title="3、字典中的增删改查"></a>3、字典中的增删改查</h3><h5 id="1、检测字典中的元素"><a href="#1、检测字典中的元素" class="headerlink" title="1、检测字典中的元素"></a>1、检测字典中的元素</h5><p>字典依然需要通过[]来访问，但是[]中所需要的不是下标；而是字典中的的键，通过键来来访问对应的值；</p>
+<h5 id="2、修改字典中的元素"><a href="#2、修改字典中的元素" class="headerlink" title="2、修改字典中的元素"></a>2、修改字典中的元素</h5><p>==公式：变量名[‘键’] = 数据==</p>
 <p>通过字典中的键来引出所对应的值；然后，在用别的值进行赋值，对这个字典的键中的内容进行修改；</p>
-<h5 id="3-添加字典中的元素"><a class="markdownIt-Anchor" href="#3-添加字典中的元素"></a> 3、添加字典中的元素</h5>
-<p><mark>公式：变量名[‘键’] = 数据</mark></p>
+<h5 id="3、添加字典中的元素"><a href="#3、添加字典中的元素" class="headerlink" title="3、添加字典中的元素"></a>3、添加字典中的元素</h5><p>==公式：变量名[‘键’] = 数据==</p>
 <p>若字典中存在这个‘键’，则执行这样的公式的代码就是改的操作</p>
 <p>若字典不中存在这个‘键’，则执行这样的公式的代码就是增加的操作</p>
-<h5 id="4-删除字典中的元素"><a class="markdownIt-Anchor" href="#4-删除字典中的元素"></a> 4、删除字典中的元素</h5>
-<p>del 的删除操作 &amp;&amp; clear( )方法的清空操作</p>
+<h5 id="4、删除字典中的元素"><a href="#4、删除字典中的元素" class="headerlink" title="4、删除字典中的元素"></a>4、删除字典中的元素</h5><p>del 的删除操作 &amp;&amp; clear( )方法的清空操作</p>
 <p>del 的关键字来说，可以删除指定的键值对，也可以删除指定的字典</p>
 <p>clear( ) 会清除字典中的所有的元素；</p>
-<h3 id="4-字典中的一些特殊操作"><a class="markdownIt-Anchor" href="#4-字典中的一些特殊操作"></a> 4、字典中的一些特殊操作</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">len()、keys()、values()、items()</span><br></pre></td></tr></table></figure>
+<h3 id="4、字典中的一些特殊操作"><a href="#4、字典中的一些特殊操作" class="headerlink" title="4、字典中的一些特殊操作"></a>4、字典中的一些特殊操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">len()、keys()、values()、items()</span><br></pre></td></tr></table></figure>
 <ul>
 <li>len( )：可以求字典中键值对的个数；len( dict1 )</li>
 <li>keys()：返回包含字典中key的列表；用法dict1.keys( )</li>
 <li>values()：返回包含字典中value的列表；用法dict1.values( )</li>
 <li>items()：返回包含所有键和值的列表；键和值放在元组中</li>
 </ul>
-<h3 id="5-for-in-对字典进行遍历"><a class="markdownIt-Anchor" href="#5-for-in-对字典进行遍历"></a> 5、for … in …对字典进行遍历</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;键:<span class="subst">&#123;i&#125;</span>,值:<span class="subst">&#123;j&#125;</span>&quot;</span>)</span><br><span class="line"><span class="comment"># 最后的输出，i 是字典中的“键”，j 是字典中“值”；</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="comment"># 打印出键和值放在一起的元组；</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> dict1:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="comment"># 遍历出来的是键；</span></span><br></pre></td></tr></table></figure>
+<h3 id="5、for-…-in-…对字典进行遍历"><a href="#5、for-…-in-…对字典进行遍历" class="headerlink" title="5、for … in …对字典进行遍历"></a>5、for … in …对字典进行遍历</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;键:<span class="subst">&#123;i&#125;</span>,值:<span class="subst">&#123;j&#125;</span>&quot;</span>)</span><br><span class="line"><span class="comment"># 最后的输出，i 是字典中的“键”，j 是字典中“值”；</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> dict1.items():</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="comment"># 打印出键和值放在一起的元组；</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> dict1:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="comment"># 遍历出来的是键；</span></span><br></pre></td></tr></table></figure>
 <p>对上面的公式进行实例的测试：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>person = &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&quot;zhangsan&quot;</span>,<span class="string">&#x27;age&#x27;</span>:<span class="number">18</span>,<span class="string">&#x27;性别&#x27;</span>:<span class="string">&#x27;女&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> person.items():</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line">(<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;zhangsan&#x27;</span>)</span><br><span class="line">(<span class="string">&#x27;age&#x27;</span>, <span class="number">18</span>)</span><br><span class="line">(<span class="string">&#x27;性别&#x27;</span>, <span class="string">&#x27;女&#x27;</span>)</span><br><span class="line"><span class="comment">#	打印出一堆的元组；</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i,j <span class="keyword">in</span> person.items():</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;i&#125;</span>,<span class="subst">&#123;j&#125;</span>&quot;</span>)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line">name,zhangsan</span><br><span class="line">age,<span class="number">18</span></span><br><span class="line">性别,女</span><br><span class="line"><span class="comment">#	格式化输出的格式；</span></span><br></pre></td></tr></table></figure>
 
@@ -433,7 +418,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AD%97%E5%85%B8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text"> 1、字典是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AD%97%E5%85%B8%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text"> 2、字典的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">3.</span> <span class="toc-text"> 3、字典中的增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%A3%80%E6%B5%8B%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.1.</span> <span class="toc-text"> 1、检测字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.2.</span> <span class="toc-text"> 2、修改字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.3.</span> <span class="toc-text"> 3、添加字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%88%A0%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.4.</span> <span class="toc-text"> 4、删除字典中的元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text"> 4、字典中的一些特殊操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-for-in-%E5%AF%B9%E5%AD%97%E5%85%B8%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86"><span class="toc-number">5.</span> <span class="toc-text"> 5、for … in …对字典进行遍历</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AD%97%E5%85%B8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">1、字典是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AD%97%E5%85%B8%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">2、字典的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">3.</span> <span class="toc-text">3、字典中的增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E3%80%81%E6%A3%80%E6%B5%8B%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.1.</span> <span class="toc-text">1、检测字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%E3%80%81%E4%BF%AE%E6%94%B9%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.2.</span> <span class="toc-text">2、修改字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%E3%80%81%E6%B7%BB%E5%8A%A0%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.3.</span> <span class="toc-text">3、添加字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4%E3%80%81%E5%88%A0%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.4.</span> <span class="toc-text">4、删除字典中的元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">4、字典中的一些特殊操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81for-%E2%80%A6-in-%E2%80%A6%E5%AF%B9%E5%AD%97%E5%85%B8%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86"><span class="toc-number">5.</span> <span class="toc-text">5、for … in …对字典进行遍历</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -463,7 +448,7 @@
             <div id="toc-article" class="toc-article">
                 <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
                 <strong class="toc-title">文章目录</strong>
-                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AD%97%E5%85%B8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text"> 1、字典是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AD%97%E5%85%B8%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text"> 2、字典的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">3.</span> <span class="toc-text"> 3、字典中的增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%A3%80%E6%B5%8B%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.1.</span> <span class="toc-text"> 1、检测字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.2.</span> <span class="toc-text"> 2、修改字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.3.</span> <span class="toc-text"> 3、添加字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%88%A0%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.4.</span> <span class="toc-text"> 4、删除字典中的元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text"> 4、字典中的一些特殊操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-for-in-%E5%AF%B9%E5%AD%97%E5%85%B8%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86"><span class="toc-number">5.</span> <span class="toc-text"> 5、for … in …对字典进行遍历</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AD%97%E5%85%B8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">1、字典是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AD%97%E5%85%B8%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">2、字典的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">3.</span> <span class="toc-text">3、字典中的增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E3%80%81%E6%A3%80%E6%B5%8B%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.1.</span> <span class="toc-text">1、检测字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%E3%80%81%E4%BF%AE%E6%94%B9%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.2.</span> <span class="toc-text">2、修改字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%E3%80%81%E6%B7%BB%E5%8A%A0%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.3.</span> <span class="toc-text">3、添加字典中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4%E3%80%81%E5%88%A0%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">3.0.4.</span> <span class="toc-text">4、删除字典中的元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">4、字典中的一些特殊操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81for-%E2%80%A6-in-%E2%80%A6%E5%AF%B9%E5%AD%97%E5%85%B8%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86"><span class="toc-number">5.</span> <span class="toc-text">5、for … in …对字典进行遍历</span></a></li></ol>
            </div>
            <script type="text/javascript">
             function showToc(){
@@ -626,6 +611,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">python-数据可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">P-Spider计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
              
@@ -638,23 +631,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">python-数据可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">P-Spider计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">markdown笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -666,15 +643,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">数字图像处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
