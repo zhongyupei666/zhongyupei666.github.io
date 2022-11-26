@@ -202,8 +202,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>### 野指针的危害:
-</code></pre>
+        <h3 id="野指针的危害"><a class="markdownIt-Anchor" href="#野指针的危害"></a> 野指针的危害:</h3>
 <p>今天在做书上的联系测试的时候，编写的是一个及其简单的后缀表达式求值的问题，整体的逻辑编写起来还是很舒服的，但是当我使用gcc进行运行的时候，好家伙直接给我报奇奇怪怪的错误;<br />
 当时，在主函数中使用的是<code>Stack * SList;</code>，然后就把<code>SList</code>作为实参进行传递给函数原型为<code>void Create(Stack * SList,int maxSize);</code>的函数中;结果直接报错,而当我把实参换成如下的形式的时候整个程序就通了:<br />
 <code>Stack SList;</code>然后最后的实参数是<code>&amp;SList</code>，之后就可以运行通过；我思考了一下，当我们创建一个指针但是没有对他进行赋值的时候，他所指向的地址是随机值;我们直接的带入的话会出现问题;而通过这样的形式便可以确定的知道对应的地址，从而不会报段错误;<br />
@@ -1372,10 +1371,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客动态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
@@ -1384,7 +1379,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">python基础</a>
+                <a href="javascript:void(0)" class="js-tag color5">博客动态</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1397,6 +1392,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">python基础</a>
               </li>
              
               <li class="article-tag-list-item">
