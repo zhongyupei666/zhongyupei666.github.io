@@ -97,7 +97,7 @@
 					<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
-			已写文章总数:25
+			已写文章总数:26
 			
 				<div style="position:absolute; bottom: -400px; left: -40px; width:70%">
 					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=280 src="//music.163.com/outchain/player?type=0&id=5172410111&auto=1&height=430"></iframe>
@@ -181,6 +181,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/07/%E6%96%87%E4%BB%B6/">文件</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/07/%E6%96%87%E4%BB%B6/" class="archive-article-date">
+  	<time datetime="2022-02-07T09:06:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-07</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>让程序和更大的外部世界进行交流，而操控文件就是为了很好的满足这一点；让外部的文件和Python解释器所运行的程序之间进行交互；</p>
+<hr />
+<h3 id="1-打开文件"><a class="markdownIt-Anchor" href="#1-打开文件"></a> 1、打开文件：</h3>
+<p>打开文件可以使用open()函数，它位于自动导入的模块io中；可以直接被调用，而函数open()将<mark>文件名</mark>作为唯一必不可少的参数，并返回一个文件对象；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里open()函数的参数中必要的参数是文件所在的地址，可以值绝对地址，也可以是相对地址；</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;file_url&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>如果指定的文件不存在的话，就会出现下面的类似的报错：</p>
+        
+          <a class="article-more-a" href="/2022/02/07/%E6%96%87%E4%BB%B6/#more">more >></a>
+        
+      
+        
+
+  <div class="declare" hidden="hidden"></div>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">python基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/07/%E6%96%87%E4%BB%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+<!-- 目录内容 -->
+             
+<!-- 目录内容结束 -->
+  
     <article id="post-json文件格式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -202,8 +305,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="json文件格式"><a href="#json文件格式" class="headerlink" title="json文件格式"></a>json文件格式</h1><hr>
-<h3 id="1、查看json数据"><a href="#1、查看json数据" class="headerlink" title="1、查看json数据:"></a>1、查看json数据:</h3><p>模块 json 提供了各种探索和处理 JSON 数据的工具，其中一些有助于重新设置这个文件的格式，让我们能够更清楚地查看原始数据，继而决定如何以编程的方式来处理<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 探索数据的结构</span></span><br><span class="line">filename = <span class="string">&#x27;./XXXXX.json&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(filename) <span class="keyword">as</span> f:</span><br><span class="line">    all_data = json.load(f)</span><br><span class="line"></span><br><span class="line">readable_file = <span class="string">&#x27;xxxx.json&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(readable_file,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(all_data,f,indent=<span class="number">4</span>)</span><br></pre></td></tr></table></figure><br>函数json.dump()接受一个json数据对象和一个文件对象，并将数据写入这个文件中。参数indent=4让 dump()使用与数据结构相匹配的缩进量来设置数据的格式；<br>
+        <h1 id="json文件格式"><a class="markdownIt-Anchor" href="#json文件格式"></a> json文件格式</h1>
+<hr />
+<h3 id="1-查看json数据"><a class="markdownIt-Anchor" href="#1-查看json数据"></a> 1、查看json数据:</h3>
+<p>模块 json 提供了各种探索和处理 JSON 数据的工具，其中一些有助于重新设置这个文件的格式，让我们能够更清楚地查看原始数据，继而决定如何以编程的方式来处理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 探索数据的结构</span></span><br><span class="line">filename = <span class="string">&#x27;./XXXXX.json&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(filename) <span class="keyword">as</span> f:</span><br><span class="line">    all_data = json.load(f)</span><br><span class="line"></span><br><span class="line">readable_file = <span class="string">&#x27;xxxx.json&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(readable_file,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(all_data,f,indent=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p>函数json.dump()接受一个json数据对象和一个文件对象，并将数据写入这个文件中。参数indent=4让 dump()使用与数据结构相匹配的缩进量来设置数据的格式；</p>
         
           <a class="article-more-a" href="/2022/02/05/json%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/#more">more >></a>
         
@@ -291,8 +398,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>要在文本文件中存储数据，一个简单方式是将数据作为一系列以逗号分隔的值 （comma-separated values）写入文件。这样的文件称为 CSV 文件</p>
-<hr>
-<h3 id="1、分析CSV文件头"><a href="#1、分析CSV文件头" class="headerlink" title="1、分析CSV文件头"></a>1、分析CSV文件头</h3><p>通过导入对应的csv模块，来打开对应的csv文件和读取里面的数据：<br>对应的<br><strong><em>csvmodel.py</em></strong> 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># 把文件的路径传给变量；</span></span><br><span class="line">file_url = <span class="string">&#x27;./XXXXX.csv&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开这个文件，并将返回的文件对象赋给f</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(fire_url) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;调用csv.reader()并将前面存储的文件对象作为实参传递给它&quot;&quot;&quot;</span></span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    <span class="comment"># 模块csv包含函数next()，调用它并传入阅读器对象时，它将返回文件中的下一行,并将值返回给变量；</span></span><br><span class="line">    head_read = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="comment"># 输出变量里面的值；</span></span><br><span class="line">    <span class="built_in">print</span>(head_read)</span><br></pre></td></tr></table></figure><br>最后的代码的输出是列表的形式：<br>    [‘STATION’, ‘NAME’, ‘DATE’, ‘PRCP’, ‘TAVG’, ‘TMAX’, ‘TMIN’]<br>
+<hr />
+<h3 id="1-分析csv文件头"><a class="markdownIt-Anchor" href="#1-分析csv文件头"></a> 1、分析CSV文件头</h3>
+<p>通过导入对应的csv模块，来打开对应的csv文件和读取里面的数据：<br />
+对应的<br />
+<em><strong><a target="_blank" rel="noopener" href="http://csvmodel.py">csvmodel.py</a></strong></em> 代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># 把文件的路径传给变量；</span></span><br><span class="line">file_url = <span class="string">&#x27;./XXXXX.csv&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开这个文件，并将返回的文件对象赋给f</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(fire_url) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;调用csv.reader()并将前面存储的文件对象作为实参传递给它&quot;&quot;&quot;</span></span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    <span class="comment"># 模块csv包含函数next()，调用它并传入阅读器对象时，它将返回文件中的下一行,并将值返回给变量；</span></span><br><span class="line">    head_read = <span class="built_in">next</span>(reader)</span><br><span class="line">    <span class="comment"># 输出变量里面的值；</span></span><br><span class="line">    <span class="built_in">print</span>(head_read)</span><br></pre></td></tr></table></figure>
+<p>最后的代码的输出是列表的形式：<br />
+[‘STATION’, ‘NAME’, ‘DATE’, ‘PRCP’, ‘TAVG’, ‘TMAX’, ‘TMIN’]</p>
         
           <a class="article-more-a" href="/2022/02/03/csv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/#more">more >></a>
         
@@ -390,8 +503,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h3 id="1、安装plotly模块"><a href="#1、安装plotly模块" class="headerlink" title="1、安装plotly模块"></a>1、安装plotly模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python -m pip install --user plotly</span><br></pre></td></tr></table></figure>
+        <hr />
+<h3 id="1-安装plotly模块"><a class="markdownIt-Anchor" href="#1-安装plotly模块"></a> 1、安装plotly模块</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python -m pip install --user plotly</span><br></pre></td></tr></table></figure>
 <p>这里的修改源的操作不再赘述，详情查看“matplotlib的使用”那部分笔记的内容；</p>
         
           <a class="article-more-a" href="/2022/02/03/%E4%BD%BF%E7%94%A8plotly%E6%A8%A1%E6%8B%9F%E6%8E%B7%E9%AA%B0%E5%AD%90-1/#more">more >></a>
@@ -588,13 +702,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Matplotlib库的使用"><a href="#Matplotlib库的使用" class="headerlink" title="Matplotlib库的使用"></a>Matplotlib库的使用</h1><hr>
-<h3 id="1、安装Matsplotlib库："><a href="#1、安装Matsplotlib库：" class="headerlink" title="1、安装Matsplotlib库："></a>1、安装Matsplotlib库：</h3><p>一般的安装指令，用python或者是python3来执行，具体的要求由自己的环境变量所指定的值来决定；<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python3 -m pip install --user matplotlib</span><br></pre></td></tr></table></figure><br>但是这样是直接连接国外的网站，会有相对应的报错信息；所以，如果遇到Warning的类似报错信息可以通过换源的方式来进行解决；</p>
-<p><strong>在这里提供相对应的几个源</strong>：<br>阿里云 <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a><br>清华大学 <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学 <a target="_blank" rel="noopener" href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a><br>华中科技大学 <a target="_blank" rel="noopener" href="http://pypi.hustunique.com/">http://pypi.hustunique.com/</a></p>
-<h5 id="1）临时："><a href="#1）临时：" class="headerlink" title="1）临时："></a>1）临时：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure>
-<h5 id="2）默认配置："><a href="#2）默认配置：" class="headerlink" title="2）默认配置："></a>2）默认配置：</h5><h6 id="a-在linux系统中："><a href="#a-在linux系统中：" class="headerlink" title="a)在linux系统中："></a>a)在linux系统中：</h6><p>修改 ~/.pip/pip.conf (没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)<br>内容如下：<br>[global]<br>index-url = <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a><br>[install]<br>trusted-host = <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn">https://pypi.tuna.tsinghua.edu.cn</a></p>
-<h6 id="b-在windows系统中："><a href="#b-在windows系统中：" class="headerlink" title="b)在windows系统中："></a>b)在windows系统中：</h6><p>直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，然后新建文件pip.ini，即 %HOMEPATH%\pip\pip.ini，在pip.ini文件中输入以下内容：</p>
-<p>[global]<br>index-url = <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a><br>[install]<br>trusted-host = <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com">http://mirrors.aliyun.com</a></p>
+        <h1 id="matplotlib库的使用"><a class="markdownIt-Anchor" href="#matplotlib库的使用"></a> Matplotlib库的使用</h1>
+<hr />
+<h3 id="1-安装matsplotlib库"><a class="markdownIt-Anchor" href="#1-安装matsplotlib库"></a> 1、安装Matsplotlib库：</h3>
+<p>一般的安装指令，用python或者是python3来执行，具体的要求由自己的环境变量所指定的值来决定；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python3 -m pip install --user matplotlib</span><br></pre></td></tr></table></figure>
+<p>但是这样是直接连接国外的网站，会有相对应的报错信息；所以，如果遇到Warning的类似报错信息可以通过换源的方式来进行解决；</p>
+<p><strong>在这里提供相对应的几个源</strong>：<br />
+阿里云 <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a><br />
+清华大学 <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br />
+中国科学技术大学 <a target="_blank" rel="noopener" href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a><br />
+华中科技大学 <a target="_blank" rel="noopener" href="http://pypi.hustunique.com/">http://pypi.hustunique.com/</a></p>
+<h5 id="1临时"><a class="markdownIt-Anchor" href="#1临时"></a> 1）临时：</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br></pre></td></tr></table></figure>
+<h5 id="2默认配置"><a class="markdownIt-Anchor" href="#2默认配置"></a> 2）默认配置：</h5>
+<h6 id="a在linux系统中"><a class="markdownIt-Anchor" href="#a在linux系统中"></a> a)在linux系统中：</h6>
+<p>修改 ~/.pip/pip.conf (没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)<br />
+内容如下：<br />
+[global]<br />
+index-url = <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a><br />
+[install]<br />
+trusted-host = <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn">https://pypi.tuna.tsinghua.edu.cn</a></p>
+<h6 id="b在windows系统中"><a class="markdownIt-Anchor" href="#b在windows系统中"></a> b)在windows系统中：</h6>
+<p>直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，然后新建文件pip.ini，即 %HOMEPATH%\pip\pip.ini，在pip.ini文件中输入以下内容：</p>
+<p>[global]<br />
+index-url = <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a><br />
+[install]<br />
+trusted-host = <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com">http://mirrors.aliyun.com</a></p>
         
           <a class="article-more-a" href="/2022/02/02/Matplotlib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
         
@@ -835,23 +969,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">P-Spider计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">python-数据可视化</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">P-Spider计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">markdown笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -864,6 +990,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客动态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">python基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -880,10 +1018,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">激光原理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">python基础</a>
               </li>
              
               <li class="article-tag-list-item">
