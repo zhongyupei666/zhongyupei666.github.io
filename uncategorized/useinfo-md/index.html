@@ -8,18 +8,20 @@
   <link rel="dns-prefetch" href="http://zhongyupei666.github.io">
   <title>useinfo | JiaFeng的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作为周期行学习 hexo 框架的记录，每次都尝试的更多一点；">
+  <meta name="description" content="作为一个 hexo 笔记框架的老用户，通过每次对笔记的内容的修改来对 hexo 框架进行学习和记录; 不会把这个形式当作教程，而是把他们当作 record 来进行。每次有的好的想法或者事件都会在这里进行记录；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="useinfo">
 <meta property="og:url" content="http://zhongyupei666.github.io/uncategorized/useinfo-md/index.html">
 <meta property="og:site_name" content="JiaFeng的博客">
-<meta property="og:description" content="作为周期行学习 hexo 框架的记录，每次都尝试的更多一点；">
+<meta property="og:description" content="作为一个 hexo 笔记框架的老用户，通过每次对笔记的内容的修改来对 hexo 框架进行学习和记录; 不会把这个形式当作教程，而是把他们当作 record 来进行。每次有的好的想法或者事件都会在这里进行记录；">
 <meta property="og:locale">
+<meta property="og:image" content="http://zhongyupei666.github.io/images/userinfo/userinfo.png">
 <meta property="article:published_time" content="2025-04-18T13:10:19.000Z">
-<meta property="article:modified_time" content="2025-04-18T13:10:54.392Z">
+<meta property="article:modified_time" content="2025-04-19T09:22:54.562Z">
 <meta property="article:author" content="zhongyupei">
 <meta property="article:tag" content="hexo 使用手册">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zhongyupei666.github.io/images/userinfo/userinfo.png">
   
     <link rel="alternative" href="/atom.xml" title="JiaFeng的博客" type="application/atom+xml">
   
@@ -66,6 +68,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tech/">项目</a></li>
+	        
+				<li><a href="/math/">数学</a></li>
 	        
 			</ul>
 		</nav>
@@ -119,6 +123,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -136,12 +142,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tech/">项目</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tech/">项目</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/math/">数学</a></li>
 		        
 				</ul>
 			</nav>
@@ -183,13 +191,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>作为周期行学习 <code>hexo</code> 框架的记录，每次都尝试的更多一点；</p>
+        <blockquote>
+<p>作为一个 <code>hexo</code> 笔记框架的老用户，通过每次对笔记的内容的修改来对 <code>hexo</code> 框架进行学习和记录; 不会把这个形式当作教程，而是把他们当作 <code>record</code> 来进行。每次有的好的想法或者事件都会在这里进行记录；</p>
+</blockquote>
 <span id="more"></span>
+<h2 id="1-通过-npm-来封装的一层接口"><a class="markdownIt-Anchor" href="#1-通过-npm-来封装的一层接口"></a> 1、通过 npm 来封装的一层接口</h2>
 <blockquote>
 <p>通过下面的 <code>package.json</code> 文件，来看看这个项目通过 <code>node</code> 自带的包管理器来实现了哪些内容</p>
 </blockquote>
-<h2 id="1-通过-npm-来封装的一层接口"><a class="markdownIt-Anchor" href="#1-通过-npm-来封装的一层接口"></a> 1、通过 npm 来封装的一层接口</h2>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;build&quot;</span>: <span class="string">&quot;hexo generate&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;clean&quot;</span>: <span class="string">&quot;hexo clean&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;deploy&quot;</span>: <span class="string">&quot;hexo deploy&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span>: <span class="string">&quot;hexo clean &amp;&amp; hexo server&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;new&quot;</span>: <span class="string">&quot;hexo new draft $npm_config_name&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;publish&quot;</span>: <span class="string">&quot;hexo publish \&quot;source/_drafts/$(ls -t source/_drafts | head -1)\&quot;$(ls -t source/_drafts | head -1)&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;draft&quot;</span>: <span class="string">&quot;hexo server --draft&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;build&quot;</span>: <span class="string">&quot;hexo generate&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;clean&quot;</span>: <span class="string">&quot;hexo clean&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;deploy&quot;</span>: <span class="string">&quot;hexo deploy&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span>: <span class="string">&quot;hexo clean &amp;&amp; hexo server&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;new&quot;</span>: <span class="string">&quot;hexo new draft $npm_config_name&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;publish&quot;</span>: <span class="string">&quot;hexo publish $(ls -t source/_drafts | head -1)&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;draft&quot;</span>: <span class="string">&quot;hexo server --draft&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>创建了一个 <code>dev</code> 这样的话使用： <code>npm run dev</code> 就可以自动的进行 <code>clean</code> 和 <code>server</code> 这两个操作了；</p>
 <p>对于 “草稿” 这种类型，也是我在第一次使用 <code>Hexo</code> 这种类型的时候忽略的一种文本类型。我们在这个项目中也对 这个类型进行了修改；</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;new&quot;</span>: <span class="string">&quot;hexo new draft $npm_config_name&quot;</span>,</span><br><span class="line"><span class="string">&quot;publish&quot;</span>: <span class="string">&quot;hexo publis $(ls -t source/_drafts | head -1)&quot;</span></span><br></pre></td></tr></table></figure>
@@ -198,17 +208,56 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run new --xxx=yyy</span><br></pre></td></tr></table></figure>
 <p>这个时候，就会将 <code>yyy</code> 这个值传给 <code>npm_config_xxx</code> 变量; 从而可以发到我们想要的动态创建草稿的目的(经实验证明是有效的);</p>
 <p>我们，如果想要看一下写的草稿的样式，但是还不想将其发布到服务器的时候。可以使用 <code>npm run draft</code> 我们在这里可以看到他实际上运行的指令是：<code>hexo server --draft</code>。由此，便可在本地查看 <code>draft</code> 中的内容所对应的效果;</p>
+<p>🔔 <strong>Tips：</strong><br />
+但是，其实在这里是存在框架的一个坑的，我们使用<code>npm run publish</code> 的时候，他会把<code>xxx.md</code> 转换为 <code>xxx-md</code> 并且，框架中的正则表达式的形式也无法将输入的文件从草稿箱中进行发表，针对这里的问题将在下面创建文件的部分进行讲解;</p>
 <h2 id="2-创建文章"><a class="markdownIt-Anchor" href="#2-创建文章"></a> 2、创建文章：</h2>
-<p>对这个部分，没有使用 <code>new post</code> 的方式来创建，我觉得正常的创建流程就是，先写草稿，然后使用<code>npm run draft</code> 来在本地预览一下草稿的对应的效果，然后在将改文章发布即可；</p>
+<blockquote>
+<p><strong>框架</strong>不负责解决工作流程的问题，好的程序员应该使用框架所提供的接口，定义适合自己工作流程的开发方式；而，目前现有的开发方式不是直接的使用 <code>Hexo</code> 给的 <code>hexo new post &lt;filename&gt;</code> 的方式来进行进行文件的创建；</p>
+</blockquote>
+<h3 id="21-定义工作流"><a class="markdownIt-Anchor" href="#21-定义工作流"></a> 2.1、定义工作流：</h3>
+<blockquote>
+<p>在有了更多的经历之后，才发现自己对程序的理解更深入了一个层次。考虑的不单单是程序开发者所关心的技术问题，还有本身对用户来说的体验问题；着这两者中达到平衡才是对一个程序员能力纬度挑战；</p>
+</blockquote>
+<p><strong>工作流：</strong></p>
+<p>放弃: <code>hexo new post &lt;filename&gt;</code> 直接创建; ❎</p>
+<p>选择: <code>npm run new --name=&lt;filename&gt;</code> 创建草稿, <code>npm run draft</code> 本地预览草稿, <code>npm run publish</code> 自动发布, <code>npm run deploy</code> 远程部署 这样的一套组合方式；✅</p>
 <p>所以，针对上述的需求，在<code>package.json</code>中做了对应的调整；</p>
 <p>创建 <code>category</code>, 现在的 <code>url</code> 的构成：<code>主类/子类s/文章名称</code> 其中的汉语都转换为汉语拼音的方式了;</p>
-<h2 id="框架错误"><a class="markdownIt-Anchor" href="#框架错误"></a> 框架错误：</h2>
-<p>由于使用<code>node publish + &lt;filename&gt;</code> 的方式一直在爆错误；于是进行查找，发现是下属的代码出现问题：</p>
-<p>对应的代码所在位置：<code>/Users/jiafeng/Downloads/first_blog/node_modules/hexo/lib/hexo/post.js:322</code> 的位置出现的问题;</p>
+<h3 id="开发过程中的框架问题"><a class="markdownIt-Anchor" href="#开发过程中的框架问题"></a> 开发过程中的框架问题：</h3>
+<p>由于使用<code>node publish + &lt;filename&gt;</code> 的方式一直在抱文件不存在的错误；于是进行查找，发现是由两个问题导致的</p>
+<ol>
+<li>对用户的输入进行过滤的时候，将<code>xxx.md</code> 转变为了 <code>xxx-md</code>;</li>
+<li>在进行正则表达式的时候，使用至少存在一个的 <code>+</code> 而不是可有可无的 <code>*</code>;</li>
+</ol>
+<p>第一个问题非常容易解决，在对应的文件 <code>/Users/jiafeng/Downloads/first_blog/node_modules/hexo/lib/hexo/post.js</code> 处，创建一个新的变量进行赋值即可；第二个问题，在进行排查的时候由于 正则表达式的基本功不够扎实，花了好久排查出来，于是在对应的文件的行数的所在位置<code>/Users/jiafeng/Downloads/first_blog/node_modules/hexo/lib/hexo/post.js:322</code> 将代码做如下的修改即可；</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">`^<span class="subst">$&#123;escapeRegExp(data.slug)&#125;</span>(?:[^\\/\\\\]+)`</span>);</span><br></pre></td></tr></table></figure>
 <p>将上述的正则表达式改为, 如下的形式：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">`^<span class="subst">$&#123;escapeRegExp(data.slug)&#125;</span>(?:[^\\/\\\\]*)`</span>);</span><br></pre></td></tr></table></figure>
-<p>修改完毕之后便可以成功的发布;</p>
+<p>修改完毕之后便可以成功的使用上述自己封装的自动发布接口;</p>
+<h2 id="3-新的需求"><a class="markdownIt-Anchor" href="#3-新的需求"></a> 3、新的需求：</h2>
+<blockquote>
+<p>我使用的 <code>hexo</code> 的主题是 <code>yillia</code> ，当时想在菜单栏创建一个新的标签，并把这个标签命名为： <mark>项目</mark>。当我点击 “项目” 时候，希望能够将category 的父标签为 tech 值的文章全部罗列出来；</p>
+</blockquote>
+<h3 id="31最初的尝试"><a class="markdownIt-Anchor" href="#31最初的尝试"></a> 3.1）最初的尝试</h3>
+<blockquote>
+<p>思路： 创建一个 <code>page</code>，使用<code>hexo new page &lt;pagename&gt;</code>; 然后，在新创建的 <code>page</code> 中使用 <code>hexo</code> 自带的模版引擎 <code>Nunjucks</code> 将内容展示到 页面上；</p>
+</blockquote>
+<p>对应的代码如下所示：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 项目</span><br><span class="line">date: 2025-04-19 13:42:17</span><br><span class="line"><span class="section">category<span class="emphasis">_filter: 物理</span></span></span><br><span class="line"><span class="emphasis"><span class="section">---</span></span></span><br><span class="line"><span class="emphasis"><span class="section"></span></span></span><br><span class="line"><span class="emphasis"><span class="section">&#123;% for post in site.posts %&#125;</span></span></span><br><span class="line"><span class="emphasis"><span class="section">  &#123;% if &#x27;物理&#x27; in post.categories %&#125;</span></span></span><br><span class="line"><span class="emphasis"><span class="section">    ## [<span class="string">&#123;&#123; post.title &#125;&#125;</span>](<span class="link">&#123;&#123; post.url &#125;&#125;</span>)</span></span></span><br><span class="line"><span class="emphasis"><span class="section">    <span class="xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span></span></span><br><span class="line"><span class="emphasis"><span class="section">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span> &#123;&#123;post.title&#125;&#125; &#123;&#123;post.url&#125;&#125;<span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span></span></span><br><span class="line"><span class="emphasis"><span class="section">    <span class="xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span></span></span><br><span class="line"><span class="emphasis"><span class="section">  &#123;% endif %&#125;</span></span></span><br><span class="line"><span class="emphasis"><span class="section">&#123;% endfor %&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>但是，事实上。这个方式只对了一半；他指挥奖上述的 <code>&lt;ul&gt;</code> 标签中的内容展示在页面上。但是不会以内容的方式展示在主题上面；这个现象需要自己踩过坑才能完全理解；</p>
+<h3 id="32新的方案"><a class="markdownIt-Anchor" href="#32新的方案"></a> 3.2）新的方案：</h3>
+<blockquote>
+<p>在询问了 <code>deepseek</code> 的需求之后，给出了一个更好的方式。并在一系列的代码试验之后，验证了最后的可行性；</p>
+</blockquote>
+<p>最后的展示效果为：</p>
+<div style="text-align: center;">
+<img src="/images/userinfo/userinfo.png" width=70% >
+</div>
+<p>在 <code>themes/yilia/layout/page.ejs</code> 文件中进行修改，将代码修改为如下的样式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% site.posts.forEach(function(post)&#123; %&gt;</span><br><span class="line">    &lt;% if(post.categories.length != 0 &amp;&amp; post.categories.data[0].name == page.category_filter)&#123; %&gt;</span><br><span class="line">        &lt;%- partial(&#x27;_partial/article&#x27;, &#123;post: post, index: true&#125;) %&gt;</span><br><span class="line">    &lt;%&#125;%&gt;</span><br><span class="line">&lt;% &#125;); %&gt;</span><br></pre></td></tr></table></figure>
+<p>使用 <code>page.category_filter</code> 来确定分类的值，将所有页面中的这个<code>category</code>值进行遍历，将符合要求的值传入到 <code>themes/yilia/layout/_partial/article.ejs</code> 文件中，并把<code>index</code>值改为<code>true</code>。如此，便可使上述的效果；</p>
+<p>对 <code>article.ejs</code> 文件的研究, 对应的问价的整体样式是由这个文件来进行控制的；后续的组建和插件都将会放入到这里；<br />
+当然上述的代码没有判断如果为空的情况，相同的思路，只需要自己补充到位即可；</p>
 
       
         
